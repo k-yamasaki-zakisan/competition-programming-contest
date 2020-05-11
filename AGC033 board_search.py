@@ -1,42 +1,26 @@
 #https://atcoder.jp/contests/agc033/tasks/agc033_a
 
-import copy
-import itertools
-    
-h,w = (int(x) for x in input().split())
-ab = []
-step = []
-count = 0
-for i in range(h):
-    a = list(input())
-    ab.append(a+['#'])
-    for j in range(w):
-        if a[j] == '#':
-            step.append([i,j])
-
-ab.append(list('#'*w))           
-memo_step = copy.deepcopy(step)
-
-dp = [[0 for a in range(w)] for b in range(h)]
+from collections import deque
  
-while len(step) > 0:
-    y, x = step.pop(0)
-    if ab[y+1][x] == '.' and dp[y+1][x] == 0 and -1 < x < w and -1 < y < h :
-        step.append([y+1, x])
-        dp[y+1][x] = dp[y][x] + 1
-    if ab[y][x+1] == '.' and dp[y][x+1] == 0 and -1 < x < w and -1 < y < h :
-        step.append([y, x+1])
-        dp[y][x+1] = dp[y][x] + 1
-    if ab[y-1][x] == '.' and dp[y-1][x] == 0 and -1 < x < w and -1 < y < h :
-        step.append([y-1, x])
-        dp[y-1][x] = dp[y][x] + 1
-    if ab[y][x-1] == '.' and dp[y][x-1] == 0 and -1 < x < w and -1 < y < h :
-        step.append([y, x-1])
-        dp[y][x-1] = dp[y][x] + 1
-
-for i,j in memo_step:
-    dp[i][j] = 0
-
-mx = max(list(itertools.chain.from_iterable(dp)))
+H, W = [int(x) for x in input().split()]
+cell = [list(input()) for i in range(H)]
  
-print(mx)
+painted = deque()
+for h in range(H):
+    for w in range(W):
+        if cell[h][w] == '#':
+            painted.append([h, w, 0])
+ 
+ans = 0
+while len(painted) > 0:
+    blackcell = painted.popleft()
+    for dy, dx in [[1, 0], [0, 1], [-1, 0], [0, -1]]:
+        nh = blackcell[0] + dy
+        nw = blackcell[1] + dx
+        d = blackcell[2]
+        if 0 <= nh < H and 0 <= nw < W and cell[nh][nw] == '.':
+            cell[nh][nw] = '#'
+            painted.append([nh, nw, d + 1])
+        ans = d
+ 
+print(ans)
