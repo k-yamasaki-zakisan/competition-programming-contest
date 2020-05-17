@@ -10,26 +10,23 @@ for _ in range(m):
     root[b-1].append(a-1)
     root[a-1].append(b-1)
 
-dp = [False]*n
+check = [-1]*n
 
 ans = 0
 
 for j in range(n):
-    if dp[j]:
+    if check[j] != -1:
         continue
-    check = [-1]*n
-    check[j] = 0
     stack=[j]
-    dp[j] = True
+    check[j]=j
     while len(stack):
-        v = stack.pop()
+        v = stack.pop(0)
         for i in root[v]:
             if check[i] == -1:
-                dp[i] = True
-                check[i]=i
+                check[i]=j
                 stack.append(i)
-    for k in range(n):
-        if check[k] != -1 and check[p[k]-1] != -1:
-            ans += 1
+for k in range(n):
+    if check[k] == check[p[k]-1] :
+        ans += 1
 
 print(ans)
