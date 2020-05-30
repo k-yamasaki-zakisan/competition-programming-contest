@@ -23,4 +23,15 @@ gusu = collections.Counter(gusu)
 kisu = sorted(kisu.items(), key=lambda x:-x[1])
 gusu = sorted(gusu.items(), key=lambda x:-x[1])
 
-print((n-kisu[0][1]-gusu[0][1])*c)
+if kisu[0][0] == gusu[0][0]:
+  if len(kisu)>1 and len(gusu)>1:
+    ans = min(n-kisu[1][1]-gusu[0][1],n-kisu[0][1]-gusu[1][1])
+    print(ans*c)
+  elif len(kisu) == 1 and len(gusu) == 1:
+    print(min(kisu[0][1],gusu[0][1])*c)
+  elif len(kisu) == 1:
+    print(min(n-kisu[0][1]-gusu[1][1],n-gusu[0][1])*c)
+  elif len(gusu) == 1:
+    print(min(n-gusu[0][1]-kisu[1][1],n-kisu[0][1])*c)
+else:
+  print((n-kisu[0][1]-gusu[0][1])*c)
