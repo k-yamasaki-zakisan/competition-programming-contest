@@ -50,10 +50,10 @@ for memo in [memo_ss,memo_sw,memo_ws,memo_ww]:
                 print(''.join(map(str,memo[:n])))
                 exit()
         elif s[0] == 'x':
-                if memo[0] == 'S' and memo[1] != memo[n-1]:
-                    print(''.join(map(str,memo[:n])))
-                    exit()
-                elif memo[0] == 'W' and memo[1] == memo[n-1]:
-                    print(''.join(map(str,memo[:n])))
-                    exit()
+            if memo[0] == 'S' and memo[1] != memo[n-1]:
+                print(''.join(map(str,memo[:n])))
+                exit()
+            elif memo[0] == 'W' and memo[1] == memo[n-1]:
+                print(''.join(map(str,memo[:n])))
+                exit()
 print(-1)
