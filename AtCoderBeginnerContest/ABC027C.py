@@ -2,7 +2,7 @@
 
 n=int(input())
 
-if n == 1 or n == 2:
+if n == 1:
     print('Aoki')
     exit()
 
