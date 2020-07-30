@@ -10,7 +10,7 @@ stock_point.sort(reverse=True)
 
 tmp_point = sum(stock_point[:k-1])
 
-last_exam_point = r*k-tmp_point
+last_exam_point = max(r*k-tmp_point,0)
 
 if n != k and last_exam_point <= stock_point[k-1]:
     print(0)
