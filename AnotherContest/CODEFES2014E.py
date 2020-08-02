@@ -10,6 +10,7 @@ for i in range(1,n):
     if r[i-1] != r[i]:
         reduce_r.append(r[i])
 
+#単調増加もしくは減少していないかどうか判定
 up_count = 0
 down_count = 0
 for i in range(1,len(reduce_r)):
@@ -20,6 +21,7 @@ for i in range(1,len(reduce_r)):
 
 count = 1
 
+#頂点かを調べてカウント
 for i in range(1,len(reduce_r)-1):
     if i == len(reduce_r)-2:
         if reduce_r[i-1] < reduce_r[i] > reduce_r[i+1] or reduce_r[i-1] > reduce_r[i] < reduce_r[i+1]:
@@ -29,7 +31,6 @@ for i in range(1,len(reduce_r)-1):
     else:
         if reduce_r[i-1] < reduce_r[i] > reduce_r[i+1] or reduce_r[i-1] > reduce_r[i] < reduce_r[i+1]:
             count += 1
-
 
 if up_count == len(reduce_r)-1 or down_count == len(reduce_r)-1:
     print(0)
