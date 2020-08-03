@@ -8,7 +8,7 @@ for i in range(n):
     w[i], p[i] = map(int, input().split())
 
 a, b = 0, 100
-
+#平均値の最大化
 while b-a > 0.00000000001:
     c = (a + b) / 2
     s = []
