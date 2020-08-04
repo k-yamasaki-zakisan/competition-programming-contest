@@ -18,6 +18,7 @@ class UnionFindPathCompression():
             return self.parents[x]
 
     def union(self, x, y):
+        #親を探す p = parentの意味
         px = self.find(x)
         py = self.find(y)
 
