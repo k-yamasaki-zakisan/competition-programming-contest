@@ -2,21 +2,31 @@
 
 import bisect
 
-A, B, Q = map(int, input().split())
+a,b,q = map(int,input().split())
+shrine = [-10**12, 10**12]
+for _ in range(a):
+    s = int(input())
+    shrine.append(s)
+shrine.sort()
 
-INF = 10 ** 18
+temple = [-10**12, 10**12]
+for _ in range(b):
+    t = int(input())
+    temple.append(t)
+temple.sort()
 
-s = [-INF] + [int(input()) for i in range(A)] + [INF]
-
-t = [-INF] + [int(input()) for i in range(B)] + [INF]
-
-
-for q in range(Q):
+for _ in range(q):
     x = int(input())
-    b, d = bisect.bisect_right(s, x), bisect.bisect_right(t, x)
-    res = INF
-    for S in [s[b - 1], s[b]]:
-        for T in [t[d - 1], t[d]]:
-            d1, d2 = abs(S - x) + abs(T - S), abs(T - x) + abs(S - T)
-            res = min(res, d1, d2)
-    print(res)
+    sx = bisect.bisect_right(shrine,x)
+    tx = bisect.bisect_right(temple,x)
+    ans = 10**12
+    #最適な経路はスタート地点から前後のshrine、templeを訪れる経路
+    for i in [shrine[sx-1], shrine[sx]]:
+        for j in [temple[tx-1], temple[tx]]:
+            #caas_1はスタート→shrine→temple
+            case_1 = abs(i-x)+abs(i-j)
+            #caas_2はスタート→temple→shrine
+            case_2 = abs(j-x)+abs(i-j)
+            ans = min(ans,case_1,case_2)
+            
+    print(ans)
