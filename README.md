@@ -15,7 +15,9 @@
 
 * https://atcoder.jp/contests/yahoo-procon2019-qual/submissions/15079646
 
-個数制限なしナップサック Beginner 153 E (一次元のメモ化でオーバーフロー回避、２次元メモでバースト)
+## 個数制限なしナップサック Beginner 153 E 
+
+* https://atcoder.jp/contests/abc153/submissions/14384980
 
 ## 個数制限付きナップサック
 
