@@ -88,10 +88,10 @@
 
 ## グラフ
 
-* https://atcoder.jp/contests/abc168/submissions/13360554（高速ver bps）
+* https://atcoder.jp/contests/abc168/submissions/13360554  （高速ver bps）
 * https://atcoder.jp/contests/abc138/submissions/10215820
-* https://atcoder.jp/contests/abc054/submissions/11474580　(dps)
-* https://atcoder.jp/contests/abc040/submissions/15689799 (重み付き bps)
+* https://atcoder.jp/contests/abc054/submissions/11474580  （dps）
+* https://atcoder.jp/contests/abc040/submissions/15689799  （重み付き bps）
 
 ## (グラフ色分け)
 
