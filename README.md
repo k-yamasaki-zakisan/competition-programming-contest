@@ -95,7 +95,7 @@
 
 * https://atcoder.jp/contests/abc146/submissions/10224604
 
-##　（グラフ特殊型３の倍数）
+## (グラフ特殊型３の倍数)
 
 * https://atcoder.jp/contests/abc132/submissions/15084072
 
