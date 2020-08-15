@@ -5,13 +5,13 @@
 * https://atcoder.jp/contests/abc155/submissions/10150821
 * https://atcoder.jp/contests/code-festival-2017-qualb/submissions/12798066
 
-## 幅優先探索　Beginner 151 D 
+## （迷路）幅優先探索　Beginner 151 D 
 
 * https://atcoder.jp/contests/abc151/submissions/10036027
 * https://atcoder.jp/contests/abc007/submissions/10035526
 * https://atcoder.jp/contests/agc033/submissions/13136714
 
-## 深さ優先探査
+## （迷路）深さ優先探査
 
 * https://atcoder.jp/contests/yahoo-procon2019-qual/submissions/15079646
 
@@ -60,7 +60,7 @@
 
 * https://atcoder.jp/contests/abc129/submissions/10209509
 
-## 三重ループの特殊全権探査
+## 三重ループの特殊全探索
 
 * https://atcoder.jp/contests/abc128/submissions/10252398
 
@@ -101,7 +101,7 @@
 
 * https://atcoder.jp/contests/abc132/submissions/15084072
 
-## 深さ優先探査
+## グラフの深さ優先探査
 
 * https://atcoder.jp/contests/arc030/submissions/15367844
 
