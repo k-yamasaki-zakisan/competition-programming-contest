@@ -25,7 +25,6 @@
 
 * https://okina-ichiyaduke.hatenablog.com/entry/2020/02/13/221956
 * https://atcoder.jp/contests/abc155/submissions/10190672
-007 D
 * https://atcoder.jp/contests/abc007/submissions/me
 
 ## 桁を求めるDP
@@ -87,7 +86,7 @@
 
 ## グラフ
 
-* https://atcoder.jp/contests/abc168/submissions/13360554(高速ver bps)
+* https://atcoder.jp/contests/abc168/submissions/13360554（高速ver bps）
 * https://atcoder.jp/contests/abc138/submissions/10215820
 * https://atcoder.jp/contests/abc054/submissions/11474580　(dps)
 * https://atcoder.jp/contests/abc040/submissions/15689799 (重み付き bps)
@@ -136,8 +135,8 @@
 
 ## Bit全探査(intertool)
 
-* https://atcoder.jp/contests/abc173/submissions/14990773（被りなし）
-* https://atcoder.jp/contests/abc165/submissions/12623144（被りあり）
+* https://atcoder.jp/contests/abc173/submissions/14990773 （被りなし）
+* https://atcoder.jp/contests/abc165/submissions/12623144 （被りあり）
 * https://qiita.com/gogotealove/items/11f9e83218926211083a
 
 ## アルファベット 系
