@@ -1,6 +1,6 @@
 # Atcoderチートシート
 
-## 辞書(リストないの要素数とまとめ上げ)　
+## 辞書(リスト内要素種類をまとめる)　
 
 * https://atcoder.jp/contests/abc155/submissions/10150821
 * https://atcoder.jp/contests/code-festival-2017-qualb/submissions/12798066
