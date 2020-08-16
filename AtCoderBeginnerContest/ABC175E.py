@@ -1,5 +1,6 @@
 #https://atcoder.jp/contests/abc175/tasks/abc175_e
 
+import copy
 import heapq
 
 R,C,K = map(int,input().split())
@@ -28,9 +29,9 @@ for h in range(R):
                     if dp[h+1][w] == dp[h][w]+cost[h][w]:
                         heapq.heappush(pick_up[h][w],cost[h][w])
                     else:
-                        tmp_array = pick_up[h][w-1]
-                        heapq.heappush(tmp_array,cost[h][w])
-                        pick_up[h][w] = tmp_array
+                        tmp_array1 = copy.copy(pick_up[h][w-1])
+                        heapq.heappush(tmp_array1,cost[h][w])
+                        pick_up[h][w] = copy.copy(tmp_array1)
                 else:
                     if dp[h+1][w] == dp[h][w]+cost[h][w]:
                         continue
@@ -39,23 +40,30 @@ for h in range(R):
                     
             else:
                 if cost[h][w] != 0:
-                    tmp_array = pick_up[h][w-1]
-                    minus = sum(tmp_array)
-                    heapq.heappush(tmp_array,cost[h][w])
-                    heapq.heappop(tmp_array)
-                    dp[h+1][w] = max(dp[h][w]+cost[h][w], dp[h+1][w-1]-minus+sum(tmp_array))
+                    tmp_array2 = copy.copy(pick_up[h][w-1])
+                    minus = sum(tmp_array2)
+                    heapq.heappush(tmp_array2,cost[h][w])
+                    heapq.heappop(tmp_array2)
+                    dp[h+1][w] = max(dp[h][w]+cost[h][w], dp[h+1][w-1]-minus+sum(tmp_array2))
                     if dp[h+1][w] == dp[h][w]+cost[h][w]:
                         heapq.heappush(pick_up[h][w],cost[h][w])
                     else:
-                        pick_up[h][w] = tmp_array
+                        pick_up[h][w] = copy.copy(tmp_array2)
                     
                 else:
                     dp[h+1][w] = max(dp[h][w]+cost[h][w], dp[h+1][w-1]+cost[h][w])
                     if dp[h+1][w] == dp[h][w]:
                         continue
                     else:
-                        pick_up[h][w] = pick_up[h][w-1]
+                        pick_up[h][w] = copy.copy(pick_up[h][w-1])
     
             
 print(dp[-1][-1])
-
+for i in dp:
+    print(*i)
+print('-----------------')
+for i in cost:
+    print(*i)
+print('-----------------')
+for i in pick_up:
+    print(*i)
