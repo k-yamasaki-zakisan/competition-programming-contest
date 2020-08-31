@@ -157,3 +157,15 @@
 ## 固定値/a[i]の高速計算
 
 * https://atcoder.jp/contests/abc152/submissions/15819832
+
+## LIS
+* https://atcoder.jp/contests/chokudai_S001/submissions/16068388
+
+## BIT(セグ木)
+* https://atcoder.jp/contests/chokudai_S001/submissions/16071116
+
+## 最大公約数
+* https://note.nkmk.me/python-gcd-lcm/
+
+## 最小全域木
+* https://atcoder.jp/contests/abc065/submissions/16413864
