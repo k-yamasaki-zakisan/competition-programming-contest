@@ -4,8 +4,6 @@ import math
 
 N = int(input())
 A = list(map(int,input().split()))
-A = list(set(A))
-A.sort()
 if N == 1:
     print(A[0])
     exit()
