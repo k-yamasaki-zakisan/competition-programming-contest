@@ -173,3 +173,7 @@
 ## 巡回セールスマン問題
 * https://atcoder.jp/contests/abc180/submissions/17471941
 * https://kakedashi-engineer.appspot.com/2020/05/21/dpl2a/
+
+# 8方向クイーン問題
+* https://atcoder.jp/contests/arc001/submissions/17550140
+* https://kakedashi-engineer.appspot.com/2020/05/09/alds1-13a/
