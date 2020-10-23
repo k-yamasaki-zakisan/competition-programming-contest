@@ -1,21 +1,21 @@
 # Atcoderチートシート
 
-## 辞書(リスト内要素種類をまとめる)　
+## リスト内要素種類をまとめる
 
 * https://atcoder.jp/contests/abc155/submissions/10150821
 * https://atcoder.jp/contests/code-festival-2017-qualb/submissions/12798066
 
-## （迷路）幅優先探索　Beginner 151 D 
+## （迷路）幅優先探索
 
 * https://atcoder.jp/contests/abc151/submissions/10036027
 * https://atcoder.jp/contests/abc007/submissions/10035526
 * https://atcoder.jp/contests/agc033/submissions/13136714
 
-## （迷路）深さ優先探査
+## （迷路）深さ優先探索
 
 * https://atcoder.jp/contests/yahoo-procon2019-qual/submissions/15079646
 
-## 個数制限なしナップサック Beginner 153 E 
+## 個数制限なしナップサック
 
 * https://atcoder.jp/contests/abc153/submissions/14384980
 
@@ -23,14 +23,11 @@
 
 * https://atcoder.jp/contests/abc015/submissions/10191872
 
-## 桁DP　Beginner 154 E
+## 桁DP
 
 * https://okina-ichiyaduke.hatenablog.com/entry/2020/02/13/221956
 * https://atcoder.jp/contests/abc155/submissions/10190672
 * https://atcoder.jp/contests/abc007/submissions/me
-
-## 桁を求めるDP
-
 * https://atcoder.jp/contests/abc118/submissions/4294511
 
 ## ベルマンフォード法　
@@ -74,7 +71,7 @@
 * https://atcoder.jp/contests/abc121/submissions/10340892
 * https://atcoder.jp/contests/agc035/submissions/12798249
 
-## 1重ループ全件探査（面白い）
+## 1重ループ全件探索（面白い）
 
 * https://atcoder.jp/contests/abc116/submissions/4652306
 
@@ -93,15 +90,15 @@
 * https://atcoder.jp/contests/abc054/submissions/11474580  （dps）
 * https://atcoder.jp/contests/abc040/submissions/15689799  （重み付き bps）
 
-## (グラフ色分け)
+## グラフ(色分け)
 
 * https://atcoder.jp/contests/abc146/submissions/10224604
 
-## (グラフ特殊型３の倍数)
+## グラフ(特殊型３の倍数)
 
 * https://atcoder.jp/contests/abc132/submissions/15084072
 
-## グラフの深さ優先探査
+## グラフ(深さ優先探索)
 
 * https://atcoder.jp/contests/arc030/submissions/15367844
 
@@ -135,13 +132,13 @@
 
 * https://atcoder.jp/contests/abc169/submissions/13905898
 
-## Bit全探査(intertool)
+## Bit全探索(intertool)
 
 * https://atcoder.jp/contests/abc173/submissions/14990773 （被りなし）
 * https://atcoder.jp/contests/abc165/submissions/12623144 （被りあり）
 * https://qiita.com/gogotealove/items/11f9e83218926211083a
 
-## アルファベット 系
+## アルファベットの処理問題
 
 * https://atcoder.jp/contests/abc157/submissions/15529636
 
