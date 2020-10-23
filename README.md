@@ -71,7 +71,7 @@
 * https://atcoder.jp/contests/abc121/submissions/10340892
 * https://atcoder.jp/contests/agc035/submissions/12798249
 
-## 1重ループ全件探索（面白い）
+## 1重ループ全探索（面白い）
 
 * https://atcoder.jp/contests/abc116/submissions/4652306
 
@@ -119,7 +119,7 @@
 
 * https://atcoder.jp/contests/abc014/submissions/12023531
 
-## ビット全件探索
+## ビット全探索
 
 * https://atcoder.jp/contests/abc147/submissions/12678904
 * https://qiita.com/gogotealove/items/11f9e83218926211083a
