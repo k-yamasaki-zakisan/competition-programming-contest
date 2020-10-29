@@ -160,10 +160,13 @@
 
 ## セグメントツリー(非再帰型)
 * https://atcoder.jp/contests/abc125/submissions/17120647
+* http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=4326214#1  (区間最小値検索)
+* http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=4326206#1  (区間)
 
-## BIT
+## BIT(区間部分和の取得と要素の更新)
 * https://atcoder.jp/contests/chokudai_S001/submissions/16071116
 * https://atcoder.jp/contests/practice2/submissions/17055421
+* https://ikatakos.com/pot/programming_algorithm/data_structure/binary_indexed_tree
 
 ## 最大公約数
 * https://note.nkmk.me/python-gcd-lcm/
