@@ -9,7 +9,7 @@ pr = deque([])
 dmg = ans = 0
 for x,h in XH:
     # 範囲外となったダメージを削除する
-    while len(pr) and pr[0][0] <= x:
+    while len(pr) and pr[0][0] < x:
         dmg -= pr[0][1]
         pr.popleft()
     # 範囲内で既に起きたダメージを受ける
@@ -21,6 +21,6 @@ for x,h in XH:
         ans += new_count
         dmg += A*new_count
         # 爆発が届く限界とそのダメージを記録
-        pr.append([x+2*D+1,A*new_count])
+        pr.append([x+2*D,A*new_count])
 
 print(ans)
