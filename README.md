@@ -163,6 +163,7 @@
 
 ## BIT
 * https://atcoder.jp/contests/chokudai_S001/submissions/16071116
+* https://atcoder.jp/contests/practice2/submissions/17055421
 
 ## 最大公約数
 * https://note.nkmk.me/python-gcd-lcm/
