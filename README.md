@@ -158,6 +158,9 @@
 ## LIS
 * https://atcoder.jp/contests/chokudai_S001/submissions/16068388
 
+## セグメントツリー
+* https://atcoder.jp/contests/abc125/submissions/17711590
+
 ## BIT
 * https://atcoder.jp/contests/chokudai_S001/submissions/16071116
 
