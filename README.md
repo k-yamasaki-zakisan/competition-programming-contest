@@ -52,6 +52,7 @@
 
 * https://atcoder.jp/contests/abc151/submissions/14948585
 * https://atcoder.jp/contests/abc151/submissions/15221340
+* https://atcoder.jp/contests/abc167/submissions/17726729
 
 ## 配列の高速サーチ
 
