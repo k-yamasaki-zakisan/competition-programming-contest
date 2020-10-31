@@ -1,4 +1,6 @@
 # https://leetcode.com/problems/3sum-closest/
+# Runtime: 352 ms, faster than 15.81% of Python3 online submissions for 3Sum Closest.
+# Memory Usage: 14.2 MB, less than 99.98% of Python3 online submissions for 3Sum Closest.
 
 class Solution:
     def threeSumClosest(self, nums: list, target: int) -> int:

@@ -1,4 +1,6 @@
 # https://leetcode.com/problems/container-with-most-water/
+# Runtime: 176 ms, faster than 18.93% of Python3 online submissions for Container With Most Water.
+# Memory Usage: 16.3 MB, less than 65.30% of Python3 online submissions for Container With Most Water.
 
 class Solution:
     def maxArea(self, height: list) -> int:

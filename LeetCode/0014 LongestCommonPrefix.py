@@ -1,4 +1,6 @@
 # https://leetcode.com/problems/longest-common-prefix/
+# Runtime: 32 ms, faster than 77.26% of Python3 online submissions for Longest Common Prefix.
+# Memory Usage: 14.1 MB, less than 100.00% of Python3 online submissions for Longest Common Prefix.
 
 class Solution:
    def longestCommonPrefix(self, strs: list) -> str:

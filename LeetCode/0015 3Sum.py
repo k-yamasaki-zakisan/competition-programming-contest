@@ -1,4 +1,6 @@
 # https://leetcode.com/problems/3sum/
+# Runtime: 868 ms, faster than 64.55% of Python3 online submissions for 3Sum.
+# Memory Usage: 17.3 MB, less than 6.64% of Python3 online submissions for 3Sum.
 
 class Solution:
     def threeSum(self, nums: list) -> list:

@@ -1,4 +1,6 @@
 # https://leetcode.com/problems/letter-combinations-of-a-phone-number/
+# Runtime: 20 ms, faster than 98.83% of Python3 online submissions for Letter Combinations of a Phone Number.
+# Memory Usage: 14.1 MB, less than 99.99% of Python3 online submissions for Letter Combinations of a Phone Number.
 
 class Solution:
     def letterCombinations(self, digits: str) -> list:

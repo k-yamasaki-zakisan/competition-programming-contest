@@ -1,4 +1,6 @@
 # https://leetcode.com/problems/roman-to-integer/
+# Runtime: 44 ms, faster than 79.41% of Python3 online submissions for Roman to Integer.
+# Memory Usage: 14.1 MB, less than 100.00% of Python3 online submissions for Roman to Integer.
 
 class Solution:
     def romanToInt(self, s: str) -> int:

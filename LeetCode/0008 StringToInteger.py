@@ -1,4 +1,6 @@
 # https://leetcode.com/problems/string-to-integer-atoi/
+# Runtime: 32 ms, faster than 78.30% of Python3 online submissions for String to Integer (atoi).
+# Memory Usage: 14.2 MB, less than 99.99% of Python3 online submissions for String to Integer (atoi).
 
 class Solution:
     def myAtoi(self, s: str) -> int:
