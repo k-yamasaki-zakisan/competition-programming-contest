@@ -163,6 +163,8 @@
 * https://atcoder.jp/contests/abc125/submissions/17120647
 * http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=4326214#1  (区間最小値検索)
 * http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=4326206#1  (区間の合計値を探索)
+* https://yukicoder.me/submissions/559940  (区間最小値検索+スワップ)
+* https://atcoder.jp/contests/practice2/tasks/practice2_j  (最大値と条件付き最小値の探索)
 
 ## BIT(区間部分和の取得と要素の更新)
 * https://atcoder.jp/contests/chokudai_S001/submissions/16071116
