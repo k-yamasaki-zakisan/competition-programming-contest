@@ -29,6 +29,7 @@
 * https://atcoder.jp/contests/abc155/submissions/10190672
 * https://atcoder.jp/contests/abc007/submissions/me
 * https://atcoder.jp/contests/abc118/submissions/4294511
+* https://atcoder.jp/contests/abc007/submissions/17913462
 
 ## ベルマンフォード法　
 
