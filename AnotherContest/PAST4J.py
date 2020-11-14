@@ -1,5 +1,5 @@
 # https://atcoder.jp/contests/past202010-open/tasks/past202010_j
-# ベルマンフォード　コストテーブルの正しい作成が肝
+# ダイグストラ法　コストテーブルの正しい作成が肝
 
 import heapq
 def dij(cost, start):
