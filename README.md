@@ -34,6 +34,7 @@
 ## ベルマンフォード法　
 
 * https://atcoder.jp/contests/abc061/submissions/10085190
+* https://atcoder.jp/contests/past202010-open/submissions/18102400
 
 ## ダイクストラ法　
 
