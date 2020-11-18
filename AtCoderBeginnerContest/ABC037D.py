@@ -5,7 +5,7 @@ sys.setrecursionlimit(1000000)
 mod = 10**9+7
 move = [[1,0],[-1,0],[0,-1],[0,1]]
 
-def dps(y:int,x:int):
+def dps(y:int,x:int) -> int:
     if ans[y][x] != 1:
         return ans[y][x]
     for dy,dx in move:
