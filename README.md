@@ -154,6 +154,7 @@
 * https://note.nkmk.me/python-union-find/
 * https://atcoder.jp/contests/atc001/submissions/15677863
 * https://atcoder.jp/contests/atc001/submissions/15677885
+* https://atcoder.jp/contests/abc183/submissions/18213015 (難しい)
 
 ## 固定値/a[i]の高速計算
 
