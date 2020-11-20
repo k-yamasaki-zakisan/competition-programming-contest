@@ -33,3 +33,37 @@ for _ in range(q):
       for v in memo_erase.values():
         ans += v**2
       print(ans)
+
+
+
+# 別解
+# from collections import deque
+# N = int(input())
+# Query = [list(map(str,input().split())) for _ in range(N)]
+
+# moji = deque([])
+# for i in range(N):
+#     if Query[i][0] == '1':
+#         alf,q = Query[i][1],int(Query[i][2])
+#         moji.append([alf,q])
+#     else:
+#         ans = {}
+#         rm_cnt = int(Query[i][1])
+#         if len(moji) and rm_cnt < moji[0][1]:
+#             ans[moji[0][0]] = rm_cnt
+#             moji[0][1] -= rm_cnt
+#         else:
+#             while len(moji) and moji[0][1] <= rm_cnt:
+#                 rm_cnt -= moji[0][1]
+#                 if moji[0][0] in ans:
+#                     ans[moji[0][0]] += moji[0][1]
+#                 else:
+#                     ans[moji[0][0]] = moji[0][1]
+#                 moji.popleft()
+#             if len(moji) and rm_cnt < moji[0][1]:
+#                 if moji[0][0] in ans:
+#                     ans[moji[0][0]] += rm_cnt
+#                 else:
+#                     ans[moji[0][0]] = rm_cnt
+#                 moji[0][1] -= rm_cnt
+#         print(sum(i**2 for i in ans.values()))
