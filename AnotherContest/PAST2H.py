@@ -1,38 +1,65 @@
 #https://atcoder.jp/contests/past202004-open/tasks/past202004_h
 
-n,m = (int(x) for x in input().split())
-ab = []
-count = 0
-dp = [[-1 for a in range(m)] for b in range(n)]
-for i in range(n):
-    a = list(input())
-    ab.append(a)
-    for j in range(m):
-        if a[j] == 'S':
-            step = [[i,j]]
-            dp[i][j] = 0
-count = 1
+H,W = map(int,input().split())
+root = [list(input()) for _ in range(H)]
+points = [[] for _ in range(11)]
+for h in range(H):
+    for w in range(W):
+        if root[h][w] == "S":
+            points[0].append((h,w))
+        elif root[h][w] == "G":
+            points[10].append((h,w))
+        else:
+            points[int(root[h][w])].append((h,w))
+dp = [[10**10]*W for _ in range(H)]
+start = points[0][0]
+dp[start[0]][start[1]] = 0
+for i in range(1,11):
+    for nh,nw in points[i]:
+        for ph,pw in points[i-1]:
+            dist = abs(nh-ph)+abs(nw-pw)
+            dp[nh][nw] = min(dp[nh][nw], dp[ph][pw]+dist)
+goal_h,gool_w = points[10][0]
+if dp[goal_h][gool_w] != 10**10:
+    print(dp[goal_h][gool_w])
+else:
+    print(-1)
 
-move = [[1,0],[0,1],[-1,0],[0,-1]]
- 
-while len(step) > 0:
-    #print(step)
-    y, x = step.pop(0)
-    for yy, xx in move:
-        if 0 <= y+yy <= n-1 and 0 <= x+xx <= m-1:
-            if dp[y+yy][x+xx] == -1:
-                dp[y+yy][x+xx] = dp[y][x]+1
-                step.append([y+yy,x+xx])
-                if str(count) == ab[y+yy][x+xx]:
-                    memo = dp[y+yy][x+xx]
-                    dp = [[-1 for a in range(m)] for b in range(n)]
-                    dp[y+yy][x+xx] = memo
-                    count += 1
-                    step = []
-                    step = [[y+yy,x+xx]]
-                    break
-                elif count == 10 and ab[y+yy][x+xx] == 'G':
-                    print(dp[y+yy][x+xx])
-                    exit()
- 
-print(-1)
+
+# 計算量ミスの想定解
+# import sys
+# input = sys.stdin.readline
+# sys.setrecursionlimit(10 ** 7)
+
+# H,W = map(int,input().split())
+
+# nums = {}
+# for i in range(1,10):
+#     nums[i] = []
+
+# for h in range(H):
+#     A = list(input())
+#     for w in range(W):
+#         if A[w] == 'S':
+#             start = [h,w]
+#         elif A[w] == 'G':
+#             goal = [h,w]
+#         else:
+#             nums[int(A[w])].append([h,w])
+
+# ans = []
+# def dps(ex_position:list,now_num:int,tmp_cnt:int):
+#     for h,w in nums[now_num]:
+#         next_tmp_cnt = tmp_cnt+abs(h-ex_position[0])+abs(w-ex_position[1])
+#         if now_num+1 < 10:
+#             dps([h,w], now_num+1, next_tmp_cnt)
+#         else:
+#             final_cnt = next_tmp_cnt+abs(h-goal[0])+abs(w-goal[1])
+#             ans.append(final_cnt)
+
+# dps(start,1,0)
+
+# if len(ans):
+#     print(min(ans))
+# else:
+#     print(-1)
