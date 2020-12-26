@@ -23,3 +23,24 @@ class Solution:
             return True
         else:
             return False
+
+
+# class Solution:
+#     def isAnagram(self, s: str, t: str) -> bool:
+
+#         d = collections.defaultdict(int)
+
+#         if (set(t).union(set(s)) != set(t)) or (set(t).union(set(s)) != set(s)):
+#           return False
+
+#         for char in s:
+#           d[char] += 1
+
+#         for char in t:
+#           d[char] -= 1
+
+#         for char in t:
+#           if d[char] != 0:
+#             return False
+
+#         return True
