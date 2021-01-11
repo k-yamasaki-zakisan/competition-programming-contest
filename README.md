@@ -190,3 +190,7 @@
 ## 8方向クイーン問題
 * https://atcoder.jp/contests/arc001/submissions/17550140
 * https://kakedashi-engineer.appspot.com/2020/05/09/alds1-13a/
+
+## 座標圧縮(imos法の応用)
+* https://atcoder.jp/contests/abc188/submissions/19369560
+* https://tjkendev.github.io/procon-library/python/geometry/compress.html
