@@ -195,3 +195,6 @@
 ## 座標圧縮(imos法の応用)
 * https://atcoder.jp/contests/abc188/submissions/19369560
 * https://tjkendev.github.io/procon-library/python/geometry/compress.html
+
+## マンハッタン距離
+* https://atcoder.jp/contests/abc178/submissions/16720212
