@@ -4,9 +4,7 @@ N, K = map(int, input().split())
 S = input()
 
 S_number = [ord(s)-97 for i, s in enumerate(S)]
-nex = [[-1]*26 for _ in range(100009)]
-for i in range(26):
-    nex[N][i] = N
+nex = [[N]*26 for _ in range(100009)]
 
 # 前計算
 for i in range(N-1, -1, -1):
