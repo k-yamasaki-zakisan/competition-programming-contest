@@ -24,9 +24,7 @@ def bps(start: int) -> list:
     return check
 
 
-tmp_colors = bps(0)
-max_index = tmp_colors.index(max(tmp_colors))
-colors = bps(max_index)
+colors = bps(0)
 ans1, ans2 = [], []
 for i, color in enumerate(colors):
     if color % 2 == 1:
