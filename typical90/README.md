@@ -106,3 +106,11 @@ bps
 ## [028 - Cluttered Paper（★4）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/028%20ClutteredPaper.py)
 
 2次元累積和
+
+## 029 - Long Bricks（★5）
+
+セグメントツリー
+
+## [030 - K Factors（★5）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/030%20K%20Factors.py)
+
+エラトステネスの篩
