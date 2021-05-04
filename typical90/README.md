@@ -78,8 +78,9 @@ nCi高速実装
 
 指数の関係式
 
-## 021 - Come Back in One Piece（★5）
-<!-- [021 - Come Back in One Piece（★5）]() -->
+## [021 - Come Back in One Piece（★5）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/021%20ComeBackInOnePiece.py)
+
+強連結グラフ
 
 ## [022 - Cubic Cake（★2）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/022%20CubicCake.py)
 
