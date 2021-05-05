@@ -115,3 +115,11 @@ bps
 ## [030 - K Factors（★5）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/030%20K%20Factors.py)
 
 エラトステネスの篩
+
+## 031 - VS AtCoder（★6）
+
+???
+
+## 032 - AtCoder Ekiden（★3）[https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/032%20AtCoderEkiden.py]
+
+順列全探索
