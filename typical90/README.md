@@ -123,3 +123,7 @@ bps
 ## 032 - AtCoder Ekiden（★3）[https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/032%20AtCoderEkiden.py]
 
 順列全探索
+
+## 033 - Not Too Bright（★2）[https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/033%20NotTooBright.py]
+
+よくわからないコーナーケース
