@@ -127,3 +127,7 @@ bps
 ## 033 - Not Too Bright（★2）[https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/033%20NotTooBright.py]
 
 よくわからないコーナーケース
+
+## 034 - There are few types of elements（★4）[https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/034%20ThereAreFewTypesOfElements.py]
+
+尺取法
