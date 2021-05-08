@@ -31,7 +31,7 @@ print('No')
 
 # N = int(input())
 # A = list(map(int, input().split()))
-# A_amari = [a % 200 for a in A][:8]
+# A_amari = [a % 200 for a in A]
 # dp = {}
 # for i, a in enumerate(A_amari):
 #     if a in dp:
