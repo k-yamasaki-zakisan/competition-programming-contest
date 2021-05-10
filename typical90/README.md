@@ -131,3 +131,11 @@ bps
 ## [034 - There are few types of elements（★4）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/034%20ThereAreFewTypesOfElements.py)
 
 尺取法
+
+## 035 - Preserve Connectivity（★7）
+
+共通先祖＋座標圧縮？
+
+## [036 - Max Manhattan Distance（★5）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/036%20MaxManhattanDistance.py)
+
+マンハッタン距離２次元グラフ最大値の定理
