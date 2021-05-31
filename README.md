@@ -202,3 +202,4 @@
 ## 二次元累積和
 * https://atcoder.jp/contests/abc203/submissions/23079799
 * https://algo-logic.info/submatrix-sum-queries/
+* https://atcoder.jp/contests/abc005/submissions/23082966
