@@ -150,3 +150,10 @@ bps
 
 共通先祖
 
+## 040 - Get More Money（★7）
+
+## 041 - Piles in AtCoder Farm（★7）
+
+## [042 - Multiple of 9（★4）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/042%20MultipleOf9.py)
+
+DP
