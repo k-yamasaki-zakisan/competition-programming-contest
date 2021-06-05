@@ -142,4 +142,6 @@ bps
 
 ## 037 - Don't Leave the Spice（★5）
 
-## [038 - Large LCM（★3）]()
+## [038 - Large LCM（★3）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/038%20LargeLCM.py)
+
+最小公倍数
