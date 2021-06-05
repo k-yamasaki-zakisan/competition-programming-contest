@@ -139,3 +139,7 @@ bps
 ## [036 - Max Manhattan Distance（★5）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/036%20MaxManhattanDistance.py)
 
 マンハッタン距離２次元グラフ最大値の定理
+
+## 037 - Don't Leave the Spice（★5）
+
+## [038 - Large LCM（★3）]()
