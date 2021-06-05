@@ -203,3 +203,6 @@
 * https://atcoder.jp/contests/abc203/submissions/23079799
 * https://algo-logic.info/submatrix-sum-queries/
 * https://atcoder.jp/contests/abc005/submissions/23082966
+
+## 共通先祖
+* https://atcoder.jp/contests/typical90/submissions/22572807
