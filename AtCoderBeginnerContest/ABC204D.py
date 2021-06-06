@@ -2,20 +2,15 @@
 
 N = int(input())
 T = list(map(int, input().split()))
-total_num = sum(T)
-memo = []
-memo_list = [0]*(total_num+1)
+total_times = sum(T)
+times = {}
 for t in T:
-    tmp = [t]
-    memo_list[t] = 1
-    for m in memo:
-        next_num = m+t
-        if memo_list[next_num] == 0:
-            tmp.append(next_num)
-            memo_list[next_num] = 1
-    memo += tmp
+    tmp_times = {t: 1}
+    for key in times.keys():
+        tmp_times[key] = 1
+        tmp_times[key+t] = 1
+    times = tmp_times
 ans = 10**10
-for i, check in enumerate(memo_list):
-    if check:
-        ans = min(ans, max(i, total_num-i))
+for key in times.keys():
+    ans = min(ans, max(total_times-key, key))
 print(ans)
