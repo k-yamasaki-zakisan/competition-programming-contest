@@ -157,3 +157,22 @@ bps
 ## [042 - Multiple of 9（★4）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/042%20MultipleOf9.py)
 
 DP
+
+## 043 - Maze Challenge with Lack of Sleep（★4）
+
+## [044 - Shift and Swapping（★3）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/044%20ShiftAndSwapping.py)
+
+deque
+
+## 045 - Simple Grouping（★6）
+
+## [046 - I Love 46（★3）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/046%20ILove46.py)
+
+modで数を減らして全探索
+
+## 047 - Monochromatic Diagonal（★7）
+
+## [048 - I will not drop out（★3）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/048%20IwillNotdropout.py)
+
+1ポイントずつに分解してソート
+
