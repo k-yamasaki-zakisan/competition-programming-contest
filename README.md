@@ -206,3 +206,8 @@
 
 ## 共通先祖
 * https://atcoder.jp/contests/typical90/submissions/22572807
+
+## 三分探索
+* https://atcoder.jp/contests/arc122/submissions/23385320
+* https://qiita.com/DaikiSuyama/items/84df26daad11cf7da453#%E4%B8%89%E5%88%86%E6%8E%A2%E7%B4%A2%E3%81%A8%E3%81%AF
+* https://qiita.com/ganariya/items/1553ff2bf8d6d7789127
