@@ -214,3 +214,6 @@
 
 ## 進数変換
 * https://atcoder.jp/contests/typical90/submissions/23509414
+
+## 強連結(分解)
+* https://atcoder.jp/contests/typical90/submissions/22296560
