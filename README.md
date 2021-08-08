@@ -217,3 +217,6 @@
 
 ## 強連結(分解)
 * https://atcoder.jp/contests/typical90/submissions/22296560
+
+## 文字列から指定番目を出力(数字はそれまでの文字列を繰り返す)
+* https://leetcode.com/problems/decoded-string-at-index/
