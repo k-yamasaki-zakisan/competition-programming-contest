@@ -15,3 +15,19 @@ class Solution:
                 people.pop(i)
             ans += 1
         return ans
+
+
+# Runtime: 444 ms, faster than 75.89% of Python3 online submissions for Boats to Save People.
+# Memory Usage: 21.1 MB, less than 15.33% of Python3 online submissions for Boats to Save People.
+
+class Solution:
+    def numRescueBoats(self, people: List[int], limit: int) -> int:
+        people.sort()
+        ans = 0
+        start, end = 0, len(people)-1
+        while start <= end:
+            if people[start]+people[end] <= limit:
+                start += 1
+            end -= 1
+            ans += 1
+        return ans
