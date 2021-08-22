@@ -220,3 +220,7 @@
 
 ## 文字列から指定番目を出力(数字はそれまでの文字列を繰り返す)
 * https://leetcode.com/problems/decoded-string-at-index/
+
+## bitDP
+* https://atcoder.jp/contests/abc142/submissions/17697283
+* https://atcoder.jp/contests/abc215/submissions/25223328
