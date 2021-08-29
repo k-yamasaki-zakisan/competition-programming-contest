@@ -2,6 +2,7 @@
 # Runtime: 204 ms, faster than 55.13% of Python3 online submissions for Valid Mountain Array.
 # Memory Usage: 15.4 MB, less than 85.99% of Python3 online submissions for Valid Mountain Array.
 
+
 class Solution:
     def validMountainArray(self, arr: List[int]) -> bool:
         max_p = arr.index(max(arr))
