@@ -244,3 +244,4 @@
 
 - https://atcoder.jp/contests/abc217/submissions/25580892 (UT で代用)
 - https://atcoder.jp/contests/abc217/submissions/25612494 (array なる訳わからんデータ構造)
+- https://atcoder.jp/contests/abc217/submissions/25621717 (SQL！？)
