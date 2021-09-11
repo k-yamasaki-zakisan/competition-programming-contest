@@ -245,3 +245,7 @@
 - https://atcoder.jp/contests/abc217/submissions/25580892 (UT で代用)
 - https://atcoder.jp/contests/abc217/submissions/25612494 (array なる訳わからんデータ構造)
 - https://atcoder.jp/contests/abc217/submissions/25621717 (SQL！？)
+
+## ２次元図形の回転
+
+- https://atcoder.jp/contests/abc218/submissions/25787866
