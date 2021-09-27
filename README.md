@@ -249,3 +249,8 @@
 ## ２次元図形の回転
 
 - https://atcoder.jp/contests/abc218/submissions/25787866
+
+## 全方位木
+
+- https://atcoder.jp/contests/abc220/submissions/26190782
+- https://atcoder.jp/contests/typical90/submissions/22572807
