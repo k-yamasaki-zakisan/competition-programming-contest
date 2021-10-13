@@ -254,3 +254,8 @@
 
 - https://atcoder.jp/contests/abc220/submissions/26190782
 - https://atcoder.jp/contests/typical90/submissions/22572807
+
+## ラジアン角度の計算系
+
+- https://atcoder.jp/contests/typical90/submissions/22114745
+- https://atcoder.jp/contests/abc197/submissions/21316684
