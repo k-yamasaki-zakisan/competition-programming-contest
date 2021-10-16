@@ -172,6 +172,10 @@
 - https://yukicoder.me/submissions/559940 (区間最小値検索+スワップ)
 - https://atcoder.jp/contests/practice2/tasks/practice2_j (最大値と条件付き最小値の探索)
 
+## 遅延評価セグ木
+
+- https://atcoder.jp/contests/typical90/submissions/26578790
+
 ## BIT(区間部分和の取得と要素の更新)
 
 - https://atcoder.jp/contests/chokudai_S001/submissions/16071116
