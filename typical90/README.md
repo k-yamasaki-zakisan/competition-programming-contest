@@ -185,3 +185,7 @@ mod で数を減らして全探索
 ## [050 - Stair Jump（★3）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/050%20StairJump.py)
 
 dp ぽい遷移をする
+
+## [051 - Typical Shop（★5）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/051%20TypicalShop.py)
+
+半分全列挙
