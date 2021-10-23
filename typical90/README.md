@@ -193,3 +193,7 @@ dp ぽい遷移をする
 ## [052 - Dice Product（★3）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/052%20DiceProduct.py)
 
 その数字が何回使われるか考える
+
+## [055 - Select 5（★2）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/055%20Select5.py)
+
+定数倍を速くする方法を考える(結構愚直な方法)
