@@ -189,3 +189,7 @@ dp ぽい遷移をする
 ## [051 - Typical Shop（★5）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/051%20TypicalShop.py)
 
 半分全列挙
+
+## [052 - Dice Product（★3）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/052%20DiceProduct.py)
+
+その数字が何回使われるか考える
