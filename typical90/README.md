@@ -2,11 +2,11 @@
 
 ## [001 - Yokan Party（★4）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/001%20YokanParty.py)
 
-値決め打ち2分探索
+値決め打ち 2 分探索
 
 ## [002 - Encyclopedia of Parentheses（★3）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/002%20EncyclopediaOfParentheses.py)
 
-bit全探索＋sort
+bit 全探索＋ sort
 
 ## [003 - Longest Circular Road（★4）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/003%20LongestCircularRoad.py)
 
@@ -17,6 +17,7 @@ bps
 累積和
 
 ## 005 - Restricted Digits（★7）
+
 <!-- [005 - Restricted Digits（★7）]() -->
 
 ## [006 - Smallest Subsequence（★5）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/006%20SmallestSubsequence.py)
@@ -32,6 +33,7 @@ DP(アルファベット前から探索)
 DP
 
 ## 009 - Three Point Angle（★6）
+
 <!-- [009 - Three Point Angle（★6）]() -->
 
 三角関数よくわからん
@@ -42,11 +44,11 @@ DP
 
 ## [011 - Gravy Jobs（★6）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/011%20GravyJobs.py)
 
-ソートしてDP
+ソートして DP
 
 ## [012 - Red Painting（★4）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/012%20RedPainting.py)
 
-UnionFindTree(2次元グラフ)
+UnionFindTree(2 次元グラフ)
 
 ## [013 - Passing（★5）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/013%20Passing.py)
 
@@ -58,13 +60,14 @@ UnionFindTree(2次元グラフ)
 
 ## [015 - Don't be too close（★6）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/015%20Don'tBeTooclose.py)
 
-nCi高速実装
+nCi 高速実装
 
 ## [016 - Minimum Coins（★3）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/016%20MinimumCoins.py)
 
-2重ループで方程式を解く
+2 重ループで方程式を解く
 
 ## 017 - Crossing Segments（★7）
+
 <!-- [017 - Crossing Segments（★7）]() -->
 
 ## [018 - Statue of Chokudai（★3）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/018%20StatueOfChokudai.py)
@@ -72,6 +75,7 @@ nCi高速実装
 三角関数
 
 ## 019 - Pick Two（★6）
+
 <!-- [019 - Pick Two（★6）]() -->
 
 ## [020 - Log Inequality（★3）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/020%20LogInequality.py)
@@ -87,6 +91,7 @@ nCi高速実装
 最大公約数
 
 ## 023 - Avoid War（★7）
+
 <!-- [023 - Avoid War（★7）]() -->
 
 ## [024 - Select +／- One（★2）](https://atcoder.jp/contests/typical90/tasks/typical90_x)
@@ -94,6 +99,7 @@ nCi高速実装
 典型？？
 
 ## 025 - Digit Product Equation（★7）
+
 <!-- [025 - Digit Product Equation（★7）]() -->
 
 ## [026 - Independent Set on a Tree（★4）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/026%20IndependentSetOnATree.py)
@@ -106,7 +112,7 @@ bps
 
 ## [028 - Cluttered Paper（★4）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/028%20ClutteredPaper.py)
 
-2次元累積和
+2 次元累積和
 
 ## 029 - Long Bricks（★5）
 
@@ -168,11 +174,14 @@ deque
 
 ## [046 - I Love 46（★3）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/046%20ILove46.py)
 
-modで数を減らして全探索
+mod で数を減らして全探索
 
 ## 047 - Monochromatic Diagonal（★7）
 
 ## [048 - I will not drop out（★3）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/048%20IwillNotdropout.py)
 
-1ポイントずつに分解してソート
+1 ポイントずつに分解してソート
 
+## [050 - Stair Jump（★3）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/050%20StairJump.py)
+
+dp ぽい遷移をする
