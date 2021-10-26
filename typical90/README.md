@@ -197,3 +197,9 @@ dp ぽい遷移をする
 ## [055 - Select 5（★2）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/055%20Select5.py)
 
 定数倍を速くする方法を考える(結構愚直な方法)
+
+## [056 - Lucky Bag（★5）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/056%20LuckyBag.py)
+
+dp と復元
+
+(嘘解法)全探索
