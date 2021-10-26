@@ -203,3 +203,7 @@ dp ぽい遷移をする
 dp と復元
 
 (嘘解法)全探索
+
+## [058 - Original Calculator（★4）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/058%20OriginalCalculator.py)
+
+ループする箇所の特定(周期性)
