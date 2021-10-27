@@ -211,3 +211,7 @@ dp と復元
 ## [060 - Chimera（★5）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/060%20Chimera.py)
 
 LIS(両端から最長増加部分列)
+
+## [061 - Deck（★2）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/061%20Deck.py)
+
+deque で配列管理
