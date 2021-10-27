@@ -207,3 +207,7 @@ dp と復元
 ## [058 - Original Calculator（★4）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/058%20OriginalCalculator.py)
 
 ループする箇所の特定(周期性)
+
+## [060 - Chimera（★5）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/060%20Chimera.py)
+
+LIS(両端から最長増加部分列)

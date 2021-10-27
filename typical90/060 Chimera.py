@@ -4,29 +4,34 @@ import bisect
 
 N = int(input())
 A = list(map(int, input().split()))
-A_r = A[::-1]
-LIS = [A[0]]
-LIS_cont = [1]*N
-LIS_r = [A_r[0]]
-LIS_cont_r = [1]*N
-for i in range(1, N):
-    if A[i] > LIS[-1]:
-        LIS.append(A[i])
-        LIS_cont[i] = len(LIS)
-    else:
-        pos = bisect.bisect_left(LIS, A[i])
-        LIS[pos] = A[i]
-        LIS_cont[i] = pos+1
 
-    if A_r[i] > LIS_r[-1]:
-        LIS_r.append(A_r[i])
-        LIS_cont_r[i] = len(LIS_r)
+LIS = [A[0]]
+LIS_cnt = [1]*N
+for i in range(1, len(A)):
+    a = A[i]
+    if LIS[-1] < a:
+        LIS.append(a)
+        LIS_cnt[i] = len(LIS)
     else:
-        pos = bisect.bisect_left(LIS_r, A_r[i])
-        LIS_r[pos] = A_r[i]
-        LIS_cont_r[i] = pos+1
-LIS_cont_r = LIS_cont_r[::-1]
+        b_i = bisect.bisect_left(LIS, a)
+        LIS[b_i] = a
+        LIS_cnt[i] = b_i+1
+
+A_r = A[::-1]
+r_LIS = [A_r[0]]
+r_LIS_cnt = [1]*N
+for i in range(1, len(A_r)):
+    a = A_r[i]
+    if r_LIS[-1] < a:
+        r_LIS.append(a)
+        r_LIS_cnt[i] = len(r_LIS)
+    else:
+        b_i = bisect.bisect_left(r_LIS, a)
+        r_LIS[b_i] = a
+        r_LIS_cnt[i] = b_i+1
+r_LIS_cnt = r_LIS_cnt[::-1]
+
 ans = 0
 for i in range(N):
-    ans = max(ans, LIS_cont_r[i]+LIS_cont[i]-1)
+    ans = max(ans, LIS_cnt[i]+r_LIS_cnt[i]-1)
 print(ans)
