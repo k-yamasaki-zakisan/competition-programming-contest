@@ -215,3 +215,7 @@ LIS(両端から最長増加部分列)
 ## [061 - Deck（★2）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/061%20Deck.py)
 
 deque で配列管理
+
+## [063 - Monochromatic Subgrid（★4）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/063%20MonochromaticSubgrid.py)
+
+bit 全探索
