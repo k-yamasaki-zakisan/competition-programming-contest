@@ -219,3 +219,7 @@ deque で配列管理
 ## [063 - Monochromatic Subgrid（★4）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/063%20MonochromaticSubgrid.py)
 
 bit 全探索
+
+## [064 - Uplift（★3）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/064%20Uplift.py)
+
+階差をメモして階差と全体数を都度更新
