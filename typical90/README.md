@@ -227,3 +227,7 @@ bit 全探索
 ## [066 - Various Arrays（★5）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/066%20VariousArrays.py)
 
 一つ一つが答えにどのぐらい関与するか
+
+## [067 - Base 8 to 9（★2）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/067%20Base8to9.py)
+
+n1→10→n2 に進数を変換する
