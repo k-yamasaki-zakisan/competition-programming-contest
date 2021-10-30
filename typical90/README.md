@@ -231,3 +231,7 @@ bit 全探索
 ## [067 - Base 8 to 9（★2）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/067%20Base8to9.py)
 
 n1→10→n2 に進数を変換する
+
+## [069 - Colorful Blocks 2（★3）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/069%20ColorfulBlocks2.py)
+
+繰り返し 2 乗法
