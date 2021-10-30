@@ -1,22 +1,16 @@
 # https://atcoder.jp/contests/typical90/tasks/typical90_bn
 
 N = int(input())
-LR = []
-cnt = 1
-for _ in range(N):
-    lr = list(map(int, input().split()))
-    cnt *= (lr[-1]-lr[0]+1)
-    LR.append(lr)
+LR = [list(map(int, input().split())) for _ in range(N)]
 
 ans = 0
-for i, lr in enumerate(LR):
-    l, r = lr
-    for j in range(l, r+1):
+for i in range(N):
+    li, ri = LR[i]
+    tmp = 0
+    for j in range(li, ri+1):
         for k in range(i):
-            el, er = LR[k]
-            if j < el:
-                ans += cnt//(r-l+1)
-            elif el <= j <= er:
-                ans += (er-j)*cnt//(r-l+1)//(er-el+1)
-
-print(ans/cnt)
+            lk, rk = LR[k]
+            if j <= rk:
+                tmp += (rk-max(j, lk-1))/(rk-lk+1)
+    ans += tmp/(ri-li+1)
+print(ans)

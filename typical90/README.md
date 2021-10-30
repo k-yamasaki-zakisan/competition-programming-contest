@@ -223,3 +223,7 @@ bit 全探索
 ## [064 - Uplift（★3）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/064%20Uplift.py)
 
 階差をメモして階差と全体数を都度更新
+
+## [066 - Various Arrays（★5）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/066%20VariousArrays.py)
+
+一つ一つが答えにどのぐらい関与するか
