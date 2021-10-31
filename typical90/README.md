@@ -243,3 +243,7 @@ n1→10→n2 に進数を変換する
 ## [070 - Plant Planning（★4）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/070%20PlantPlanning.py)
 
 中央値を選ぶのが最小値になる
+
+## [072 - Loop Railway Plan（★4）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/072%20LoopRailwayPlan.py)
+
+全点 dps で探索

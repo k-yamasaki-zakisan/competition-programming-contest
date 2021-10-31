@@ -4,37 +4,29 @@ import sys
 sys.setrecursionlimit(10 ** 7)
 
 
-def dps(y: int, x: int):
-    global tmp, ans
-
-    for i in range(4):
-        ny, nx = y + DY[i], x + DX[i]
-        if ([gy, gx] == [ny, nx]) and ([DY[i], DX[i]] != [-dy, -dx]):
-            ans = max(ans, tmp)
-        else:
-            if 0 <= ny < H and 0 <= nx < W and d[ny][nx] == 0 and C[ny][nx] != "#":
-                tmp += 1
-                d[ny][nx] = 1
-                dps(ny, nx)
-                tmp -= 1
-                d[ny][nx] = 0
+def dps(n_h, n_w, cnt):
+    global ans
+    for y, x in [[1, 0], [-1, 0], [0, 1], [0, -1]]:
+        j_h, j_w = n_h+y, n_w+x
+        if j_h == h and j_w == w:
+            ans = max(ans, cnt+1)
+            continue
+        if 0 <= j_h < H and 0 <= j_w < W and C[j_h][j_w] == '.' and check[j_h][j_w] == False:
+            check[j_h][j_w] = True
+            dps(j_h, j_w, cnt+1)
+            check[j_h][j_w] = False
 
 
 H, W = map(int, input().split())
-C = [list(input()) for _ in range(H)]
-DY = [1, 0, -1, 0]
-DX = [0, 1, 0, -1]
-
+C = [input() for _ in range(H)]
 ans = -1
-for gy in range(H):
-    for gx in range(W):
-        if C[gy][gx] == '.':
-            for i in range(4):
-                d = [[0] * W for _ in range(H)]
-                d[gy][gx] = 1
-                dy, dx = DY[i], DX[i]
-                if 0 <= gy+dy < H and 0 <= gx+dx < W and C[gy+dy][gx+dx] != "#":
-                    d[gy+dy][gx+dx] = 1
-                    tmp = 2
-                    dps(gy+dy, gx+dx)
-print(ans)
+for h in range(H):
+    for w in range(W):
+        if C[h][w] == '.':
+            check = [[False]*W for _ in range(H)]
+            check[h][w] = True
+            dps(h, w, 0)
+if 2 < ans:
+    print(ans)
+else:
+    print(-1)
