@@ -232,6 +232,10 @@ bit 全探索
 
 n1→10→n2 に進数を変換する
 
+## [068 - Paired Information（★5）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/068%20PairedInformation.py)
+
+クリエ先読み
+
 ## [069 - Colorful Blocks 2（★3）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/069%20ColorfulBlocks2.py)
 
 繰り返し 2 乗法
