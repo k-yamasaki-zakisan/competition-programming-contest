@@ -239,3 +239,7 @@ n1→10→n2 に進数を変換する
 ## [069 - Colorful Blocks 2（★3）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/069%20ColorfulBlocks2.py)
 
 繰り返し 2 乗法
+
+## [070 - Plant Planning（★4）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/070%20PlantPlanning.py)
+
+中央値を選ぶのが最小値になる
