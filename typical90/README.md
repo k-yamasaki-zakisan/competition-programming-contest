@@ -247,3 +247,7 @@ n1→10→n2 に進数を変換する
 ## [072 - Loop Railway Plan（★4）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/072%20LoopRailwayPlan.py)
 
 全点 dps で探索
+
+## [075 - Magic For Balls（★3）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/075%20MagicForBalls.py)
+
+素因数分解
