@@ -251,3 +251,7 @@ n1→10→n2 に進数を変換する
 ## [075 - Magic For Balls（★3）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/075%20MagicForBalls.py)
 
 素因数分解
+
+## [076 - Cake Cut（★3）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/076%20CakeCut.py)
+
+配列+配列 で条件に合うものを探索
