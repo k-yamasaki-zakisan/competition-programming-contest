@@ -255,3 +255,7 @@ n1→10→n2 に進数を変換する
 ## [081 - Friendly Group（★5）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/081%20FriendlyGroup.py)
 
 二次元累積和
+
+## [082 - Counting Numbers（★3）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/081%20FriendlyGroup.py)
+
+二次元累積和
