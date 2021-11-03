@@ -256,6 +256,6 @@ n1→10→n2 に進数を変換する
 
 二次元累積和
 
-## [082 - Counting Numbers（★3）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/081%20FriendlyGroup.py)
+## [082 - Counting Numbers（★3）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/082%20CountingNumbers.py)
 
-二次元累積和
+桁ごとに計算
