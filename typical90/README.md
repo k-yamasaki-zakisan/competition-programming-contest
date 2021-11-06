@@ -263,3 +263,7 @@ n1→10→n2 に進数を変換する
 ## [084 - There are two types of characters（★3）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/084%20ThereAreTwoTypesOfCharacters.py)
 
 ○× でグループを作ってそれぞれの位置をメモしてにぶたん
+
+## [087 - Chokudai's Demand（★5）](https://github.com/kazuyoshi-tech/competition-programming-contest/blob/master/typical90/087%20Chokudai'sDemand.py)
+
+ワルシャールフロイド＋にぶたん
