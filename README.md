@@ -161,9 +161,13 @@
 
 - https://atcoder.jp/contests/abc152/submissions/15819832
 
-## LIS
+## LIS(最長増加部分列)
 
 - https://atcoder.jp/contests/chokudai_S001/submissions/16068388
+
+## LCS(最長共通部分列)
+
+- https://atcoder.jp/contests/dp/submissions/25973665
 
 ## セグメントツリー(非再帰型)
 
