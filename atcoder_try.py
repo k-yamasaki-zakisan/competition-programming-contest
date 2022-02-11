@@ -13,7 +13,8 @@
 # memo = defaultdict(int)
 
 import sys
+
 sys.stdin.readline
-sys.setrecursionlimit(10 ** 7)
-MOD = 10**9+7
-INF = float('inf')
+sys.setrecursionlimit(10**7)
+MOD = 10**9 + 7
+INF = float("inf")
