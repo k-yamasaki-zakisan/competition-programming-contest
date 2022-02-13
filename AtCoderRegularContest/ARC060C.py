@@ -1,16 +1,4 @@
-# from collections import Counter
-# import re
-# import copy
-# import itertools
-# from sys import stdin
-# from collections import deque
-# from copy import copy
-# from itertools import combinations
-# from bisect import bisect
-# import heapq
-# import sys
-# from collections import defaultdict
-# memo = defaultdict(int)
+# https://atcoder.jp/contests/arc060/tasks/arc060_a
 
 import sys
 
