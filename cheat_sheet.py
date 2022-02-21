@@ -4,11 +4,6 @@ n = int(input())
 # 文字列のインプット
 s = input()
 
-# 文字列配列化
-str = "abcdefghij"
-char_list = list(str)
-# => ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
-
 # 個数がわかっている場合
 x, y = map(int, input().split())
 print(x, y)

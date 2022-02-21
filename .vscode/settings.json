@@ -1,0 +1,28 @@
+{
+  // Python用のformatter
+  // https://itc-engineering-blog.netlify.app/blogs/black-flake8
+  "python.formatting.provider": "black",
+  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Args": [
+    "--max-line-length=88",
+    "--ignore=E203,W503,W504"
+  ],
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+
+  // prettier eclint用の設定
+  // https://zuma-lab.com/posts/next-eslint-prettier-settings
+  // https://github.com/prettier/prettier-vscode#default-formatter
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[python]": {
+    "editor.defaultFormatter": null
+  },
+  "editor.formatOnType": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+
+  "window.zoomLevel": 2
+}

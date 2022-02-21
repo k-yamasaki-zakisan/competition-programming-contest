@@ -12,87 +12,47 @@
 # from collections import defaultdict
 # memo = defaultdict(int)
 
-import sys
-from collections import defaultdict
+# import sys
 
-sys.stdin.readline
-sys.setrecursionlimit(10**7)
+# sys.stdin.readline
+# sys.setrecursionlimit(10**7)
+
 INF = float("inf")
+MOD = 10**9 + 7
 
-
-class UnionFindPathCompression:
-    def __init__(self, n):
-        self.parents = list(range(n))
-        self.rank = [1] * n
-        self.size = [1] * n
-
-    def find(self, x):
-        if self.parents[x] == x:
-            return x
-        else:
-            self.parents[x] = self.find(self.parents[x])
-            return self.parents[x]
-
-    def union(self, x, y):
-        px = self.find(x)
-        py = self.find(y)
-
-        if px == py:
-            return
-        else:
-            if self.rank[px] < self.rank[py]:
-                self.parents[px] = py
-                self.size[py] += self.size[px]
-            else:
-                self.parents[py] = px
-                self.size[px] += self.size[py]
-                # ランクの更新
-                if self.rank[px] == self.rank[py]:
-                    self.rank[px] += 1
-
-
-N, M = map(int, input().split())
-D = list(map(int, input().split()))
-AB = [list(map(int, input().split())) for _ in range(M)]
-if sum(D) != (N - 1) * 2:
-    print(-1)
-    exit()
-uf = UnionFindPathCompression(N)
-for a, b in AB:
-    a, b = a - 1, b - 1
-    if uf.find(a) == uf.find(b):
-        print(-1)
-        exit()
-    uf.union(a, b)
-    D[a] -= 1
-    D[b] -= 1
-
-group = [uf.find(i) for i in range(N)]
-dic = defaultdict(list)
-for i, g in enumerate(group):
-    dic[g] += [i] * D[i]
-# print(dic)
-remain = list(dic.values())
-remain.sort(key=lambda x: len(x))
-L = len(remain)
-now = L - 1
-ans = []
-for i in range(L - 2, -1, -1):
-    if len(remain[i]) == 0 or i == now:
+H, W = map(int, input().split())
+S = [list(input()) for _ in range(H)]
+dp = [[0] * W for _ in range(H)]
+dp_tate = [[0] * W for _ in range(H)]
+dp_yoko = [[0] * W for _ in range(H)]
+dp_nana = [[0] * W for _ in range(H)]
+dp[0][0] = dp_tate[0][0] = dp_yoko[0][0] = dp_nana[0][0] = 1
+for h in range(1, H):
+    if S[h][0] == "#":
         break
-    node1 = remain[i].pop()
-    node2 = remain[now].pop()
-    ans.append((node1 + 1, node2 + 1))
-    while i <= now and len(remain[now]) == 0:
-        now -= 1
 
-n = 0
-for re in remain:
-    n = max(n, len(re))
+    if h == 1:
+        dp[h][0] = 1
 
-if len(ans) == N - M - 1 and n == 0:
-    for a in ans:
-        print(*a)
-else:
-    print(-1)
-# print(remain, ans)
+    else:
+        dp[h][0] = (dp[h - 1][0] * 2) % MOD
+    dp_tate[h][0] = dp_yoko[h][0] = dp_nana[h][0] = dp[h][0]
+for w in range(1, W):
+    if S[0][w] == "#":
+        break
+
+    if w == 1:
+        dp[0][w] = 1
+    else:
+        dp[0][w] = (dp[0][w - 1] * 2) % MOD
+    dp_tate[0][w] = dp_yoko[0][w] = dp_nana[0][w] = dp[0][w]
+
+for h in range(1, H):
+    for w in range(1, W):
+        if S[h][w] == "#":
+            continue
+        dp[h][w] = (dp_tate[h - 1][w] + dp_yoko[h][w - 1] + dp_nana[h - 1][w - 1]) % MOD
+        dp_tate[h][w] = (dp[h][w] + dp_tate[h - 1][w]) % MOD
+        dp_yoko[h][w] = (dp[h][w] + dp_yoko[h][w - 1]) % MOD
+        dp_nana[h][w] = (dp[h][w] + dp_nana[h - 1][w - 1]) % MOD
+print(dp[H - 1][W - 1])
