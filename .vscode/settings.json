@@ -1,4 +1,17 @@
 {
+  "editor.formatOnSave": true,
+
+  // prettier eclint用の設定
+  // https://zuma-lab.com/posts/next-eslint-prettier-settings
+  // https://github.com/prettier/prettier-vscode#default-formatter
+  "editor.formatOnPaste": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnType": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.tabSize": 2,
+
   // Python用のformatter
   // https://itc-engineering-blog.netlify.app/blogs/black-flake8
   "python.formatting.provider": "black",
@@ -9,19 +22,10 @@
   ],
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
-
-  // prettier eclint用の設定
-  // https://zuma-lab.com/posts/next-eslint-prettier-settings
-  // https://github.com/prettier/prettier-vscode#default-formatter
-  "editor.formatOnSave": true,
-  "editor.formatOnPaste": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[python]": {
-    "editor.defaultFormatter": null
-  },
-  "editor.formatOnType": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "editor.defaultFormatter": null,
+    "editor.formatOnPaste": false,
+    "editor.tabSize": 4
   },
 
   "window.zoomLevel": 2
