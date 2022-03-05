@@ -1,21 +1,21 @@
 # 一個だけ数字
-n = int(input())
+N = int(input())
 
 # 文字列のインプット
-s = input()
+S = input()
 
 # 個数がわかっている場合
-x, y = map(int, input().split())
-print(x, y)
+X, Y = map(int, input().split())
+print(X, Y)
 # =>x y
 
 # n個の文字列のインプット
 # 1 2 3 4 5 ... n
-t = input().split()
+T = input().split()
 ["1", "2", "3", ..., "n"]
 
 # 1 2 3 4 5 ... n
-t = list(map(int, input().split()))
+T = list(map(int, input().split()))
 [1, 2, 3, 4, 5, ..., n]
 
 # 一重配列
