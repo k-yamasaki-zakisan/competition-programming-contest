@@ -12,53 +12,32 @@
 # from collections import defaultdict
 # memo = defaultdict(int)
 
-# import sys
+import sys
 
-# sys.stdin.readline
-# sys.setrecursionlimit(10**7)
+sys.stdin.readline
+sys.setrecursionlimit(10**7)
 
 INF = float("inf")
 MOD1 = 10**9 + 7
 MOD2 = 998244353
 
-memo = [1]
-for _ in range(63):
-    memo.append(memo[-1] * 2)
-alph = ["A", "B", "C"]
-alph_2 = ["A", "C", "B"]
+N = int(input())
+memo = []
+ans = 0
+for num in range(2, N + 1):
+    print(f"? 1 {num}")
+    sys.stdout.flush()
+    dist = int(input())
+    ans = max(ans, dist)
+    memo.append((num, dist))
 
-S = input()
-Q = int(input())
-TK = [list(map(int, input().split())) for _ in range(Q)]
-for t, k in TK:
-    if 63 <= t:
-        cnt = 0
-        tmp = 1
-        while tmp <= k:
-            cnt += 1
-            tmp *= 2
-        ex = t % 3
-        botm = alph[(alph.index(S[0]) + ex) % 3]
-        now = alph_2[(alph_2.index(botm) + cnt % 3) % 3]
-    else:
-        base = memo[t]
-        i = k // base if k % base else k // base - 1
-        k -= i * base
-        cnt = t
-        now = S[i]
-
-    while cnt:
-        if now == "A":
-            ne1, ne2 = "B", "C"
-        elif now == "B":
-            ne1, ne2 = "C", "A"
-        else:
-            ne1, ne2 = "A", "B"
-
-        if memo[cnt] // 2 < k:
-            now = ne2
-            k -= memo[cnt] // 2
-        else:
-            now = ne1
-        cnt -= 1
-    print(now)
+memo = sorted(memo, key=lambda x: -x[1])
+ori = memo[0][0]
+for num in range(1, N + 1):
+    if num == ori:
+        continue
+    print(f"? {ori} {num}")
+    sys.stdout.flush()
+    dist = int(input())
+    ans = max(ans, dist)
+print(f"! {ans}")
