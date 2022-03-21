@@ -248,6 +248,7 @@
 
 - https://atcoder.jp/contests/abc142/submissions/17697283
 - https://atcoder.jp/contests/abc215/submissions/25223328
+- https://atcoder.jp/contests/abc244/submissions/30332188
 
 ## 平行二分木探索(python でやる方法)
 
