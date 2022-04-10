@@ -22,15 +22,19 @@ INF = float("inf")
 MOD1 = 10**9 + 7
 MOD2 = 998244353
 
-
 N = int(input())
-for a in range(1, 100):
-    aa = pow(3, a)
-    for b in range(1, 100):
-        bb = pow(5, b)
-        if aa + bb == N:
-            print(a, b)
-            exit()
-        elif N < aa + bb:
-            break
-print(-1)
+S = input()
+X = input()
+
+X = X[::-1]
+S = S[::-1]
+
+E = {0}
+for x, s in zip(X, S):
+    F = E
+    s = int(s)
+    if x == "T":
+        E = {a for a in range(7) if ((10 * a) % 7 in F) or ((10 * a + s) % 7 in F)}
+    else:
+        E = {a for a in range(7) if ((10 * a) % 7 in F) and ((10 * a + s) % 7 in F)}
+print("Takahashi" if 0 in E else "Aoki")
