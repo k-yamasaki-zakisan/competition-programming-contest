@@ -2,6 +2,8 @@
 # Runtime: 34 ms, faster than 93.34% of Python3 online submissions for Verifying an Alien Dictionary.
 # Memory Usage: 13.9 MB, less than 85.33% of Python3 online submissions for Verifying an Alien Dictionary.
 
+from typing import List
+
 
 class Solution:
     def isAlienSorted(self, words: List[str], order: str) -> bool:
