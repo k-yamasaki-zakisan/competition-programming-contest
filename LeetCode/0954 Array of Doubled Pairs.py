@@ -1,10 +1,8 @@
-from typing import List
+# https://leetcode.com/problems/array-of-doubled-pairs/
+# Runtime: 664 ms, faster than 85.98% of Python3 online submissions for Array of Doubled Pairs.
+# Memory Usage: 16.7 MB, less than 40.54% of Python3 online submissions for Array of Doubled Pairs.
 
-# from collections import Counter
-# from collections import defaultdict
-# from bisect import bisect_right
-# from copy import copy
-# from collections import deque
+from typing import List
 
 
 class Solution:
@@ -42,8 +40,3 @@ class Solution:
                 else:
                     return False
         return True
-
-
-arr = [4, -2, 2, -4]
-S = Solution()
-print(S.canReorderDoubled(arr))
