@@ -1,10 +1,8 @@
-from typing import List
+# https://leetcode.com/problems/delete-columns-to-make-sorted-iii/
+# Runtime: 399 ms, faster than 22.42% of Python3 online submissions for Delete Columns to Make Sorted III.
+# Memory Usage: 13.9 MB, less than 100.00% of Python3 online submissions for Delete Columns to Make Sorted III.
 
-# from collections import Counter
-# from collections import defaultdict
-# from bisect import bisect_right
-# from copy import copy
-# from collections import deque
+from typing import List
 
 
 class Solution:
@@ -16,8 +14,3 @@ class Solution:
                 if all(row[i] <= row[j] for row in strs):
                     dp[i] = max(dp[i], 1 + dp[j])
         return W - max(dp)
-
-
-strs = ["ghi", "def", "abc"]
-S = Solution()
-print(S.minDeletionSize(strs))
