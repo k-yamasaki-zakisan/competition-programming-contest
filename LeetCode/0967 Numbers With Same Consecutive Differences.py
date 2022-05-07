@@ -1,10 +1,8 @@
-from typing import List
+# https://leetcode.com/problems/numbers-with-same-consecutive-differences/
+# Runtime: 48 ms, faster than 69.19% of Python3 online submissions for Numbers With Same Consecutive Differences.
+# Memory Usage: 14.1 MB, less than 77.03% of Python3 online submissions for Numbers With Same Consecutive Differences.
 
-# from collections import Counter
-# from collections import defaultdict
-# from bisect import bisect_right
-# from copy import copy
-# from collections import deque
+from typing import List
 
 
 class Solution:
@@ -22,9 +20,3 @@ class Solution:
                     tmp.append(num + str(last + k))
             nums = tmp
         return nums
-
-
-n = 3
-k = 7
-S = Solution()
-print(S.numsSameConsecDiff(n, k))
