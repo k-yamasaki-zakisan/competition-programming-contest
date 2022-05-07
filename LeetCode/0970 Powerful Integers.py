@@ -1,10 +1,8 @@
-from typing import List
+# https://leetcode.com/problems/powerful-integers/
+# Runtime: 53 ms, faster than 31.31% of Python3 online submissions for Powerful Integers.
+# Memory Usage: 13.7 MB, less than 97.98% of Python3 online submissions for Powerful Integers.
 
-# from collections import Counter
-# from collections import defaultdict
-# from bisect import bisect_right
-# from copy import copy
-# from collections import deque
+from typing import List
 
 
 class Solution:
@@ -25,10 +23,3 @@ class Solution:
             for i in range(i_b):
                 ans.add(x_base + y_pow[i])
         return sorted(list(ans))
-
-
-x = 2
-y = 1
-bound = 10
-S = Solution()
-print(S.powerfulIntegers(x, y, bound))

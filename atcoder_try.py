@@ -20,13 +20,5 @@ INF = float("inf")
 MOD1 = 10**9 + 7
 MOD2 = 998244353
 
-N = int(input())
-A = [int(input()) for _ in range(N)]
-pos = {}
-for i, a in enumerate(A):
-    pos[a] = i
-a_sort = sorted(A)
-ans = 0
-for i, a in enumerate(a_sort):
-    ans += abs(i - pos[a]) % 2
-print(ans // 2)
+arr = [3, 2, 4, 1]
+print(arr[1:])
