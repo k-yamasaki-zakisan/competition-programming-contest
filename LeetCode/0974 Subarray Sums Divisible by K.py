@@ -1,10 +1,8 @@
-from typing import List
+# https://leetcode.com/problems/subarray-sums-divisible-by-k/
+# Runtime: 472 ms, faster than 26.30% of Python3 online submissions for Subarray Sums Divisible by K.
+# Memory Usage: 18.9 MB, less than 68.58% of Python3 online submissions for Subarray Sums Divisible by K.
 
-# from collections import Counter
-# from collections import defaultdict
-# from bisect import bisect_right
-# from copy import copy
-# from collections import deque
+from typing import List
 
 
 class Solution:
@@ -20,9 +18,3 @@ class Solution:
             ans += nums_memo[tmp]
             nums_memo[tmp] += 1
         return ans
-
-
-nums = [5]
-k = 9
-S = Solution()
-print(S.subarraysDivByK(nums, k))
