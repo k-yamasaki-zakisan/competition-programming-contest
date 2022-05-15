@@ -281,3 +281,7 @@
 ## 最大フロー  （Dinic’s Algorithm、 Ford-Fulkerson Algorithm）
 
 - https://atcoder.jp/contests/ttpc2015/submissions/31341855
+
+## 隣り合う２つの要素を購入できる状態で購入最小値を求める dp
+
+- https://atcoder.jp/contests/abc251/submissions/31694474

@@ -20,5 +20,25 @@ INF = float("inf")
 MOD1 = 10**9 + 7
 MOD2 = 998244353
 
-arr = [3, 2, 4, 1]
-print(arr[1:])
+INF = float("inf")
+
+N = int(input())
+A = list(map(int, input().split()))
+
+dp1 = 0
+dp2 = INF
+for i in range(N):
+    a = A[i]
+    dp1, dp2 = dp2, min(dp1, dp2) + a
+
+ans = min(dp1, dp2)
+
+dp1 = INF
+dp2 = A[-1]
+for i in range(N - 1):
+    a = A[i]
+    dp1, dp2 = dp2, min(dp1, dp2) + a
+
+ans = min(ans, dp1, dp2)
+
+print(ans)
