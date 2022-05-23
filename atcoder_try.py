@@ -12,6 +12,7 @@
 # from collections import defaultdict
 # memo = defaultdict(int)
 
+
 import sys
 
 sys.setrecursionlimit(10**7)
@@ -20,25 +21,18 @@ INF = float("inf")
 MOD1 = 10**9 + 7
 MOD2 = 998244353
 
-INF = float("inf")
+from heapq import heapify, heappop, heappush
 
-N = int(input())
+N, L = map(int, input().split())
 A = list(map(int, input().split()))
-
-dp1 = 0
-dp2 = INF
-for i in range(N):
-    a = A[i]
-    dp1, dp2 = dp2, min(dp1, dp2) + a
-
-ans = min(dp1, dp2)
-
-dp1 = INF
-dp2 = A[-1]
-for i in range(N - 1):
-    a = A[i]
-    dp1, dp2 = dp2, min(dp1, dp2) + a
-
-ans = min(ans, dp1, dp2)
-
+if sum(A) < L:
+    A.append(L - sum(A))
+h = A[::-1]
+heapify(h)
+ans = 0
+while 1 < len(h):
+    x1 = heappop(h)
+    x2 = heappop(h)
+    ans += x1 + x2
+    heappush(h, x1 + x2)
 print(ans)
