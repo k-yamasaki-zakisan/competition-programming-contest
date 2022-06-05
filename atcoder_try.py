@@ -21,18 +21,20 @@ INF = float("inf")
 MOD1 = 10**9 + 7
 MOD2 = 998244353
 
-from heapq import heapify, heappop, heappush
+from collections import defaultdict
 
-N, L = map(int, input().split())
-A = list(map(int, input().split()))
-if sum(A) < L:
-    A.append(L - sum(A))
-h = A[::-1]
-heapify(h)
+N = int(input())
+
+d = defaultdict(int)
+for i in range(1, N + 1):
+    j = 2
+    while j**2 <= min(i, N):
+        if i % j**2 == 0:
+            i //= j**2
+        else:
+            j += 1
+    d[i] += 1
 ans = 0
-while 1 < len(h):
-    x1 = heappop(h)
-    x2 = heappop(h)
-    ans += x1 + x2
-    heappush(h, x1 + x2)
+for v in d.values():
+    ans += v**2
 print(ans)
