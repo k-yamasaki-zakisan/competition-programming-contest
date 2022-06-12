@@ -23,18 +23,25 @@ MOD2 = 998244353
 
 from collections import defaultdict
 
-N = int(input())
+n, m = map(int, input().split())
+S = list(map(int, input().split()))
+X = list(map(int, input().split()))
 
-d = defaultdict(int)
-for i in range(1, N + 1):
-    j = 2
-    while j**2 <= min(i, N):
-        if i % j**2 == 0:
-            i //= j**2
+tmp = [0]
+for s in S:
+    tmp.append(s - tmp[-1])
+
+tmp2 = [[] for _ in range(n)]
+for i, j in enumerate(tmp):
+    for x in X:
+        if i % 2 == 0:
+            tmp2[i].append(x - j)
         else:
-            j += 1
-    d[i] += 1
-ans = 0
-for v in d.values():
-    ans += v**2
-print(ans)
+            tmp2[i].append(j - x)
+
+cont = defaultdict(int)
+for i in tmp2:
+    for j in i:
+        cont[j] += 1
+
+print(max(cont.values()))
