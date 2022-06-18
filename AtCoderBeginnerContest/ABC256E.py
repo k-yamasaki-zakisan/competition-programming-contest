@@ -1,26 +1,4 @@
-# from collections import Counter
-# import re
-# import copy
-# import itertools
-# from sys import stdin
-# from collections import deque
-# from copy import copy
-# from itertools import combinations
-# from bisect import bisect
-# import heapq
-# import sys
-# from collections import defaultdict
-# memo = defaultdict(int)
-
-
-from cmath import cos
-import sys
-
-sys.setrecursionlimit(10**7)
-
-INF = float("inf")
-MOD1 = 10**9 + 7
-MOD2 = 998244353
+# https://atcoder.jp/contests/abc256/tasks/abc256_e
 
 from heapq import heapify, heappop, heappush
 
