@@ -1,1 +1,2 @@
-print(pow(28, 4))
+ans = "test"
+print(ans[2:])
