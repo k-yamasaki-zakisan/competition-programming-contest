@@ -1,16 +1,16 @@
-from typing import List
+# https://leetcode.com/problems/longest-turbulent-subarray/
+# Runtime: 569 ms, faster than 81.76% of Python3 online submissions for Longest Turbulent Subarray.
+# Memory Usage: 20.6 MB, less than 6.24% of Python3 online submissions for Longest Turbulent Subarray.
 
-# from collections import Counter
-# from collections import defaultdict
-# from bisect import bisect_right
-# from copy import copy
-# from collections import deque
+from typing import List
 
 
 class Solution:
     def maxTurbulenceSize(self, arr: List[int]) -> int:
         memo = []
         len_arr = len(arr)
+        if len(set(arr)) == 1:
+            return 1
         for i in range(len_arr - 1):
             if arr[i] < arr[i + 1]:
                 memo.append("<")
@@ -28,10 +28,4 @@ class Solution:
             else:
                 ans = max(ans, cnt + 1)
                 cnt = 1
-            # print(i, cnt)
         return max(ans, cnt + 1)
-
-
-arr = [0, 8, 45, 88, 48, 68, 28, 55, 17, 24]
-S = Solution()
-print(S.maxTurbulenceSize(arr))
