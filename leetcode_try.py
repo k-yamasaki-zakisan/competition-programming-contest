@@ -39,7 +39,7 @@ class Solution:
                 ):
                     now_cnt += 1
                     visited[next_h][next_w] = True
-                    dfs(next_h, next_w, now_cnt)
+                    result = dfs(next_h, next_w, now_cnt)
                     now_cnt -= 1
                     visited[next_h][next_w] = False
 
