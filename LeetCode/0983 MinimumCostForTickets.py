@@ -1,17 +1,15 @@
-from typing import List
+# https://leetcode.com/problems/minimum-cost-for-tickets/
+# Runtime: 45 ms, faster than 93.76% of Python3 online submissions for Minimum Cost For Tickets.
+# Memory Usage: 13.8 MB, less than 90.59% of Python3 online submissions for Minimum Cost For Tickets.
 
-# from collections import Counter
-# from collections import defaultdict
-# from bisect import bisect_right
-# from copy import copy
-# from collections import deque
+from typing import List
 
 
 class Solution:
     def mincostTickets(self, days: List[int], costs: List[int]) -> int:
         NEXT = (0, 6, 29)
         set_days = set(days)
-        max_day = 450
+        max_day = 400
         dp = [10**10] * max_day
         dp[0] = 0
         for i in range(1, max_day):
@@ -24,9 +22,3 @@ class Solution:
             else:
                 dp[i] = min(dp[i], dp[i - 1])
         return dp[-1]
-
-
-days = [1, 4, 6, 7, 8, 20]
-costs = [7, 2, 15]
-S = Solution()
-print(S.mincostTickets(days, costs))
