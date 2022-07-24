@@ -8,25 +8,41 @@ from typing import List
 
 
 class Solution:
-    def mincostTickets(self, days: List[int], costs: List[int]) -> int:
-        NEXT = (0, 6, 29)
-        set_days = set(days)
-        max_day = 450
-        dp = [10**10] * max_day
-        dp[0] = 0
-        for i in range(1, max_day):
-            if i in set_days:
-                for j in range(3):
-                    n = NEXT[j]
-                    cost = costs[j]
-                    if i + n < max_day:
-                        dp[i + n] = min(dp[i + n], dp[i - 1] + cost)
-            else:
-                dp[i] = min(dp[i], dp[i - 1])
-        return dp[-1]
+    def intervalIntersection(
+        self, firstList: List[List[int]], secondList: List[List[int]]
+    ) -> List[List[int]]:
+        times = []
+        for fs, fg in firstList:
+            times.append([fs, 0, "f"])
+            times.append([fg, 1, "f"])
+        for ss, sg in secondList:
+            times.append([ss, 0, "s"])
+            times.append([sg, 1, "s"])
+        times = sorted(times, key=lambda x: x[1])
+        times = sorted(times, key=lambda x: x[0])
+
+        ans = []
+        len_times = len(times)
+        for i in range(len_times - 1):
+            f = times[i]
+            s = times[i + 1]
+            if f[0] == s[0] and f[1] == s[1]:
+                if f[1] == 0:
+                    times[i][2] = "fs"
+                    times[i + 1][2] = "fs"
+                else:
+                    times[i][2] = "sf"
+                    times[i + 1][2] = "sf"
+        for i in range(len_times - 1):
+            f = times[i]
+            s = times[i + 1]
+            if f[1] == 0 and s[1] == 1 and f[2] != s[2]:
+                ans.append([f[0], s[0]])
+        return ans
 
 
-days = [1, 4, 6, 7, 8, 20]
-costs = [7, 2, 15]
+firstList = [[3, 5], [9, 20]]
+secondList = [[4, 5], [7, 10], [11, 12], [14, 15], [16, 20]]
+# [[4,5],[9,10],[11,12],[14,15],[16,20]]
 S = Solution()
-print(S.mincostTickets(days, costs))
+print(S.intervalIntersection(firstList, secondList))
