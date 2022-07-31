@@ -1,11 +1,8 @@
-from typing import List, Optional
-from collections import defaultdict, deque
+# https://leetcode.com/problems/minimum-number-of-k-consecutive-bit-flips/
+# Runtime: 1170 ms, faster than 94.90% of Python3 online submissions for Minimum Number of K Consecutive Bit Flips.
+# Memory Usage: 17 MB, less than 92.55% of Python3 online submissions for Minimum Number of K Consecutive Bit Flips.
 
-# from collections import Counter
-# from collections import defaultdict
-# from bisect import bisect_right
-# from copy import copy
-# from collections import deque
+from typing import List
 
 
 class Solution:
@@ -17,7 +14,6 @@ class Solution:
         for i in range(len_nums - k + 1):
             cnt += memo[i]
             if (nums[i] + cnt) % 2 == 0:
-                memo[i] += 1
                 if i + k < len_nums:
                     memo[i + k] -= 1
                 cnt += 1
@@ -27,9 +23,3 @@ class Solution:
             if (nums[i] + cnt) % 2 == 0:
                 return -1
         return ans
-
-
-nums = [0, 0, 0, 1, 0, 1, 1, 0]
-k = 3
-S = Solution()
-print(S.minKBitFlips(nums, k))
