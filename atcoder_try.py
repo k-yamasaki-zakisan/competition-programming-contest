@@ -17,21 +17,30 @@ INF = float("inf")
 MOD1 = 10**9 + 7
 MOD2 = 998244353
 
+import sys
 
-N, C = map(int, input().split())
-TA = [list(map(int, input().split())) for _ in range(N)]
-X = C
-dp = [[0, 1] for _ in range(30)]
-for t, a in TA:
-    nX = 0
-    for i in range(30):
-        for j in range(2):
-            if t == 1:
-                dp[i][j] &= (a >> i) % 2
-            if t == 2:
-                dp[i][j] |= (a >> i) % 2
-            if t == 3:
-                dp[i][j] ^= (a >> i) % 2
-        nX += (dp[i][(X >> i) % 2]) * (1 << i)
-    X = nX
-    print(X)
+input = sys.stdin.readline
+sys.setrecursionlimit(10**7)
+
+MOD2 = 998244353
+
+N = int(input())
+A = list(map(int, input().split()))
+ans = 0
+for m in range(1, N + 1):
+    dp = [[[0] * m for _ in range(m + 1)] for _ in range(N + 1)]
+    dp[0][0][0] = 1
+    for i in range(N):
+        ai = A[i] % m
+        for j in range(min(m + 1, i + 1)):
+            for k in range(m):
+                dp[i + 1][j][k] += dp[i][j][k]
+                dp[i + 1][j][k] %= MOD2
+                if j + 1 <= m:
+                    dp[i + 1][j + 1][(k + ai) % m] += dp[i][j][k]
+                    dp[i + 1][j + 1][(k + ai) % m] %= MOD2
+
+    ans += dp[N][m][0]
+    ans %= MOD2
+
+print(ans)

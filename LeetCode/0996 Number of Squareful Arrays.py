@@ -1,22 +1,19 @@
-from typing import List, Optional
-from collections import defaultdict, deque
+# https://leetcode.com/problems/number-of-squareful-arrays/
+# Runtime: 44 ms, faster than 71.62% of Python3 online submissions for Number of Squareful Arrays.
+# Memory Usage: 13.8 MB, less than 86.04% of Python3 online submissions for Number of Squareful Arrays.
 
-# from collections import Counter
-# from collections import defaultdict
-# from bisect import bisect_right
-# from copy import copy
-# from collections import deque
+from typing import List
 
 
 class Solution:
     def numSquarefulPerms(self, nums: List[int]) -> int:
-        self.ans = 0
-        nums.sort()
+        self.ans = set()
 
         def dfs(tmp_nums, nums):
             if len(nums) == 0:
-                self.ans += 1
+                self.ans.add("".join([str(num) for num in tmp_nums]))
                 return
+
             for i in range(len(nums)):
                 if 0 < i and nums[i] == nums[i - 1]:
                     continue
@@ -28,9 +25,4 @@ class Solution:
                     dfs(tmp_nums + [nums[i]], nums[:i] + nums[i + 1 :])
 
         dfs([], nums)
-        return self.ans
-
-
-nums = [2, 2, 2]
-S = Solution()
-print(S.numSquarefulPerms(nums))
+        return len(self.ans)
