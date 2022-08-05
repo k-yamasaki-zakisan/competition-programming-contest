@@ -1,11 +1,8 @@
-from typing import List, Optional
-from collections import defaultdict, deque
+# https://leetcode.com/problems/minimum-cost-to-merge-stones/
+# Runtime: 118 ms, faster than 33.80% of Python3 online submissions for Minimum Cost to Merge Stones.
+# Memory Usage: 15.3 MB, less than 13.69% of Python3 online submissions for Minimum Cost to Merge Stones.
 
-# from collections import Counter
-# from collections import defaultdict
-# from bisect import bisect_right
-# from copy import copy
-# from collections import deque
+from typing import List
 
 
 class Solution:
@@ -24,9 +21,3 @@ class Solution:
 
         ans = dfs(0, len(stones) - 1, 1)
         return -1 if ans == float("inf") else ans
-
-
-stones = [3, 5, 1, 2, 6]
-k = 3
-S = Solution()
-print(S.mergeStones(stones, k))
