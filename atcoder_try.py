@@ -24,23 +24,26 @@ sys.setrecursionlimit(10**7)
 
 MOD2 = 998244353
 
-N = int(input())
-A = list(map(int, input().split()))
-ans = 0
-for m in range(1, N + 1):
-    dp = [[[0] * m for _ in range(m + 1)] for _ in range(N + 1)]
-    dp[0][0][0] = 1
-    for i in range(N):
-        ai = A[i] % m
-        for j in range(min(m + 1, i + 1)):
-            for k in range(m):
-                dp[i + 1][j][k] += dp[i][j][k]
-                dp[i + 1][j][k] %= MOD2
-                if j + 1 <= m:
-                    dp[i + 1][j + 1][(k + ai) % m] += dp[i][j][k]
-                    dp[i + 1][j + 1][(k + ai) % m] %= MOD2
+from heapq import heappop, heappush
 
-    ans += dp[N][m][0]
-    ans %= MOD2
+N, L, R = map(int, input().split())
+A = list(map(int, input().split()))
+sum_a = sum(A)
+ans = sum_a
+memo = []
+ruiseki = [0]
+for i, a in enumerate(A):
+    ruiseki.append(ruiseki[-1] + a)
+    heappush(memo, [sum_a - ruiseki[-1] + (i + 1) * L, i])
+ans = min(ans, memo[0][0])
+ruiseki_r = [0]
+for i in range(N - 1, -1, -1):
+    a = A[i]
+    ruiseki_r.append(ruiseki_r[-1] + a)
+    ans = min(ans, sum_a - ruiseki_r[-1] + (N - i) * R)
+    while len(memo) and i <= memo[0][1]:
+        heappop(memo)
+    if len(memo):
+        ans = min(ans, memo[0][0] - ruiseki_r[-1] + (N - i) * R)
 
 print(ans)
