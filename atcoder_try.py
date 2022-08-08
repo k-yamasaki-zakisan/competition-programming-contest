@@ -24,26 +24,17 @@ sys.setrecursionlimit(10**7)
 
 MOD2 = 998244353
 
-from heapq import heappop, heappush
+MOD = 998244353
 
-N, L, R = map(int, input().split())
-A = list(map(int, input().split()))
-sum_a = sum(A)
-ans = sum_a
-memo = []
-ruiseki = [0]
-for i, a in enumerate(A):
-    ruiseki.append(ruiseki[-1] + a)
-    heappush(memo, [sum_a - ruiseki[-1] + (i + 1) * L, i])
-ans = min(ans, memo[0][0])
-ruiseki_r = [0]
-for i in range(N - 1, -1, -1):
-    a = A[i]
-    ruiseki_r.append(ruiseki_r[-1] + a)
-    ans = min(ans, sum_a - ruiseki_r[-1] + (N - i) * R)
-    while len(memo) and i <= memo[0][1]:
-        heappop(memo)
-    if len(memo):
-        ans = min(ans, memo[0][0] - ruiseki_r[-1] + (N - i) * R)
+n = int(input())
+a = list(map(int, input().split()))
+cum = [0] * (n + 1)
 
-print(ans)
+for i in range(n - 2, -1, -1):
+    ans = cum[i + 1] - cum[i + a[i] + 1] + a[i] + 1
+    ans %= MOD
+    ans *= pow(a[i], MOD - 2, MOD)
+    ans %= MOD
+    cum[i] = ans + cum[i + 1]
+
+print((cum[0] - cum[1]) % MOD)
