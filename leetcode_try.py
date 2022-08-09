@@ -9,21 +9,22 @@ from collections import defaultdict, deque
 
 
 class Solution:
-    def mergeStones(self, stones: List[int], K: int) -> int:
-        from functools import lru_cache
-
-        @lru_cache(None)
-        def dfs(l, r, pile):
-            if pile == K and (r - l) % (pile - 1):
-                return float("inf")
-            if l == r:
-                return 0
-            if pile == 1:
-                return dfs(l, r, K) + sum(stones[l : r + 1])
-            return min(dfs(l, i, 1) + dfs(i + 1, r, pile - 1) for i in range(l, r))
-
-        ans = dfs(0, len(stones) - 1, 1)
-        return -1 if ans == float("inf") else ans
+    def largestSumAfterKNegations(self, nums: List[int], k: int) -> int:
+        nums.sort()
+        abs_nums = [abs(num) for num in nums]
+        abs_nums.sort()
+        ans = sum(nums)
+        for i in range(min(k, len(nums))):
+            if nums[i] < 0:
+                ans += 2 * abs(nums[i])
+            else:
+                cnt = k - i
+                if cnt % 2:
+                    ans -= abs_nums[0] * 2
+                return ans
+        if len(nums) < k:
+            ans -= abs_nums[0] * 2
+        return ans
 
 
 stones = [3, 5, 1, 2, 6]
