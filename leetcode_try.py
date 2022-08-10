@@ -9,25 +9,29 @@ from collections import defaultdict, deque
 
 
 class Solution:
-    def largestSumAfterKNegations(self, nums: List[int], k: int) -> int:
-        nums.sort()
-        abs_nums = [abs(num) for num in nums]
-        abs_nums.sort()
-        ans = sum(nums)
-        for i in range(min(k, len(nums))):
-            if nums[i] < 0:
-                ans += 2 * abs(nums[i])
+    def clumsy(self, n: int) -> int:
+        nums = [num for num in range(n, 0, -1)]
+        minus = []
+        plus = []
+        minus_num = 1
+        for i in range(n):
+            if i % 4 == 0 or i % 4 == 1:
+                minus_num *= nums[i]
+            elif i % 4 == 2:
+                minus_num //= nums[i]
+                minus.append(minus_num)
+                minus_num = 1
             else:
-                cnt = k - i
-                if cnt % 2:
-                    ans -= abs_nums[0] * 2
-                return ans
-        if len(nums) < k:
-            ans -= abs_nums[0] * 2
+                plus.append(nums[i])
+        if n % 4 == 1 or n % 4 == 2:
+            minus.append(minus_num)
+        ans = minus[0] + sum(plus)
+        print(minus, plus, minus_num)
+        for i in range(1, len(minus)):
+            ans -= minus[i]
         return ans
 
 
-stones = [3, 5, 1, 2, 6]
-k = 3
+n = 5
 S = Solution()
-print(S.mergeStones(stones, k))
+print(S.clumsy(n))
