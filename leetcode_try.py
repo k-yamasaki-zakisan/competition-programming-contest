@@ -9,15 +9,25 @@ from collections import defaultdict, deque
 
 
 class Solution:
-    def numDupDigitsAtMostN(self, N: int) -> int:
-        import math
+    def canThreePartsEqualSum(self, arr: List[int]) -> bool:
+        sum_arr = sum(arr)
+        if sum_arr % 3 != 0:
+            return False
+        base = sum_arr // 3
+        tmp = 0
+        cnt = 0
+        print(base)
+        for a in arr:
+            tmp += a
+            if tmp == base:
+                cnt += 1
+                tmp = 0
+            if cnt == 3:
+                return True
+            print(a, tmp, cnt)
+        return False
 
-        L = list(map(int, str(N + 1)))
-        print(L)
-        res = sum(9 * perm(9, i) for i in range(n - 1))
-        print(res)
 
-
-n = 1000
+n = [3, 3, 6, 5, -2, 2, 5, 1, -9, 4]
 S = Solution()
-print(S.numDupDigitsAtMostN(n))
+print(S.canThreePartsEqualSum(n))
