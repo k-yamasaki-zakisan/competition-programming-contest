@@ -9,25 +9,14 @@ from collections import defaultdict, deque
 
 
 class Solution:
-    def canThreePartsEqualSum(self, arr: List[int]) -> bool:
-        sum_arr = sum(arr)
-        if sum_arr % 3 != 0:
-            return False
-        base = sum_arr // 3
-        tmp = 0
-        cnt = 0
-        print(base)
-        for a in arr:
-            tmp += a
-            if tmp == base:
-                cnt += 1
-                tmp = 0
-            if cnt == 3:
-                return True
-            print(a, tmp, cnt)
-        return False
+    def queryString(self, s: str, n: int) -> bool:
+        bin_n = bin(n)[2:]
+        print(bin_n)
+        return bin_n in s
 
 
-n = [3, 3, 6, 5, -2, 2, 5, 1, -9, 4]
+n = "110101011011000011011111000000"
+s = 15
+
 S = Solution()
-print(S.canThreePartsEqualSum(n))
+print(S.queryString(n, s))
