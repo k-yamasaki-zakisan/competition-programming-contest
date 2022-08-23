@@ -1,11 +1,8 @@
-from typing import List, Optional
-from collections import defaultdict, deque
+# https://leetcode.com/problems/number-of-enclaves/
+# Runtime: 837 ms, faster than 63.57% of Python3 online submissions for Number of Enclaves.
+# Memory Usage: 15.3 MB, less than 81.25% of Python3 online submissions for Number of Enclaves.
 
-# from collections import Counter
-# from collections import defaultdict
-# from bisect import bisect_right
-# from copy import copy
-# from collections import deque
+from typing import List
 
 
 class Solution:
@@ -40,22 +37,4 @@ class Solution:
                                 flag = False
                 if flag:
                     ans += cnt
-
         return ans
-
-
-n = [
-    [0, 0, 0, 1, 1, 1, 0, 1, 0, 0],
-    [1, 1, 0, 0, 0, 1, 0, 1, 1, 1],
-    [0, 0, 0, 1, 1, 1, 0, 1, 0, 0],
-    [0, 1, 1, 0, 0, 0, 1, 0, 1, 0],
-    [0, 1, 1, 1, 1, 1, 0, 0, 1, 0],
-    [0, 0, 1, 0, 1, 1, 1, 1, 0, 1],
-    [0, 1, 1, 0, 0, 0, 1, 1, 1, 1],
-    [0, 0, 1, 0, 0, 1, 0, 1, 0, 1],
-    [1, 0, 1, 0, 1, 1, 0, 0, 0, 0],
-    [0, 0, 0, 0, 1, 1, 0, 0, 0, 1],
-]
-
-S = Solution()
-print(S.numEnclaves(n))
