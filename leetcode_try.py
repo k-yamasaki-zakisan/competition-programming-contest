@@ -9,53 +9,49 @@ from collections import defaultdict, deque
 
 
 class Solution:
-    def numEnclaves(self, grid: List[List[int]]) -> int:
-        from collections import deque
-
-        H, W = len(grid), len(grid[0])
-        visited = [[False] * W for _ in range(H)]
-        ans = 0
-        for h in range(H):
-            for w in range(W):
-                if not (grid[h][w] == 1 and not visited[h][w]):
-                    continue
-                flag = True if (w not in [0, W - 1] and h not in [0, H - 1]) else False
-                cnt = 1
-                visited[h][w] = True
-                stack = deque([[h, w]])
-                while len(stack):
-                    now_h, now_w = stack.popleft()
-                    for y, x in [(1, 0), (-1, 0), (0, 1), (0, -1)]:
-                        next_h, next_w = now_h + y, now_w + x
-                        if (
-                            0 <= next_h < H
-                            and 0 <= next_w < W
-                            and grid[next_h][next_w] == 1
-                            and not visited[next_h][next_w]
-                        ):
-                            visited[next_h][next_w] = True
-                            cnt += 1
-                            stack.append([next_h, next_w])
-                            if next_w in [0, W - 1] or next_h in [0, H - 1]:
-                                flag = False
-                if flag:
-                    ans += cnt
-
-        return ans
+    def videoStitching(self, clips: List[List[int]], time: int) -> int:
+        clips = sorted(clips, key=lambda x: x[0])
+        now = next = 0
+        cnt = 1
+        for s, g in clips:
+            if s <= now <= g:
+                next = max(next, g)
+                if s <= time <= g:
+                    return cnt
+            elif g < now:
+                continue
+            else:
+                if now < next:
+                    cnt += 1
+                    now = next
+                    if now < s:
+                        return -1
+                    else:
+                        next = max(next, g)
+                        if s <= time <= g:
+                            return cnt
+        return -1
 
 
-n = [
-    [0, 0, 0, 1, 1, 1, 0, 1, 0, 0],
-    [1, 1, 0, 0, 0, 1, 0, 1, 1, 1],
-    [0, 0, 0, 1, 1, 1, 0, 1, 0, 0],
-    [0, 1, 1, 0, 0, 0, 1, 0, 1, 0],
-    [0, 1, 1, 1, 1, 1, 0, 0, 1, 0],
-    [0, 0, 1, 0, 1, 1, 1, 1, 0, 1],
-    [0, 1, 1, 0, 0, 0, 1, 1, 1, 1],
-    [0, 0, 1, 0, 0, 1, 0, 1, 0, 1],
-    [1, 0, 1, 0, 1, 1, 0, 0, 0, 0],
-    [0, 0, 0, 0, 1, 1, 0, 0, 0, 1],
+clips = [
+    [0, 1],
+    [6, 8],
+    [0, 2],
+    [5, 6],
+    [0, 4],
+    [0, 3],
+    [6, 7],
+    [1, 3],
+    [4, 7],
+    [1, 4],
+    [2, 5],
+    [2, 6],
+    [3, 4],
+    [4, 5],
+    [5, 7],
+    [6, 9],
 ]
+time = 9
 
 S = Solution()
-print(S.numEnclaves(n))
+print(S.videoStitching(clips, time))
