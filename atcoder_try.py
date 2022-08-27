@@ -21,28 +21,24 @@ INF = float("inf")
 MOD1 = 10**9 + 7
 MOD2 = 998244353
 
-from collections import defaultdict
+INF = float("inf")
 
-N, M = map(int, input().split())
-A, B, C, D, E, F = map(int, input().split())
-XY = set()
-for _ in range(M):
-    X, Y = map(int, input().split())
-    XY.add((X, Y))
+N = int(input())
+TXA = [list(map(int, input().split())) for _ in range(N)]
+X = [0] * (TXA[-1][0] + 1)
+A = [0] * (TXA[-1][0] + 1)
+for t, x, a in TXA:
+    X[t] = x
+    A[t] = a
 
-ans = defaultdict(int)
-ans[(0, 0)] = 1
-for _ in range(N):
-    memo = defaultdict(int)
-    for key, val in ans.items():
-        ab = (key[0] + A, key[1] + B)
-        cd = (key[0] + C, key[1] + D)
-        ef = (key[0] + E, key[1] + F)
-        if ab not in XY:
-            memo[ab] = (memo[ab] + val) % MOD2
-        if cd not in XY:
-            memo[cd] = (memo[cd] + val) % MOD2
-        if ef not in XY:
-            memo[ef] = (memo[ef] + val) % MOD2
-    ans = memo
-print(sum(ans.values()) % MOD2)
+dp = [[-INF] * (TXA[-1][0] + 1) for _ in range(5)]
+dp[0][0] = 0
+for t in range(1, (TXA[-1][0] + 1)):
+    for i in range(5):
+        dp[i][t] = dp[i][t - 1]
+        if i != 0:
+            dp[i][t] = max(dp[i][t], dp[i - 1][t - 1])
+        if i != 4:
+            dp[i][t] = max(dp[i][t], dp[i + 1][t - 1])
+    dp[X[t]][t] += A[t]
+print(max(dp[i][-1] for i in range(5)))

@@ -285,3 +285,7 @@
 ## 隣り合う２つの要素を購入できる状態で購入最小値を求める dp
 
 - https://atcoder.jp/contests/abc251/submissions/31694474
+
+## ３角形内に点が入っているか
+
+https://atcoder.jp/contests/abc266/submissions/34408664
