@@ -286,6 +286,6 @@
 
 - https://atcoder.jp/contests/abc251/submissions/31694474
 
-## ３角形内に点が入っているか
+## ３角形内に任意の点が入っているか
 
 https://atcoder.jp/contests/abc266/submissions/34408664
