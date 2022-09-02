@@ -1,11 +1,8 @@
-from typing import List, Optional
-from collections import defaultdict, deque
+# https://leetcode.com/problems/maximum-sum-of-two-non-overlapping-subarrays/
+# Runtime: 193 ms, faster than 28.22% of Python3 online submissions for Maximum Sum of Two Non-Overlapping Subarrays.
+# Memory Usage: 14.4 MB, less than 9.21% of Python3 online submissions for Maximum Sum of Two Non-Overlapping Subarrays.
 
-# from collections import Counter
-# from collections import defaultdict
-# from bisect import bisect_right
-# from copy import copy
-# from collections import deque
+from typing import List
 
 
 class Solution:
@@ -34,10 +31,3 @@ class Solution:
                     ans = max(ans, f_n + s_n)
                     break
         return ans
-
-
-S = Solution()
-nums = [2, 1, 5, 6, 0, 9, 5, 0, 3, 8]
-firstLen = 4
-secondLen = 3
-print(S.maxSumTwoNoOverlap(nums, firstLen, secondLen))
