@@ -9,13 +9,48 @@ from collections import defaultdict, deque
 
 
 class Solution:
-    def numMovesStones(self, a: int, b: int, c: int) -> List[int]:
-        nums = sorted([a, b, c])
-        print(nums)
+    def isEscapePossible(
+        self, blocked: List[List[int]], source: List[int], target: List[int]
+    ) -> bool:
+        from collections import deque
+
+        blocks = set([(a, b) for a, b in blocked])
+        max_num = 10**6
+
+        def bfs(sh, sw, gh, gs):
+            pos = deque([[sh, sw]])
+            visited = set([(sh, sw)])
+            cnt = 0
+            while pos and cnt < 200:
+                nowh, noww = pos.popleft()
+                if nowh == gh and noww == gs:
+                    return True
+                for nexth, nextw in [
+                    [nowh + 1, noww],
+                    [nowh - 1, noww],
+                    [nowh, noww + 1],
+                    [nowh, noww - 1],
+                ]:
+                    if (
+                        0 <= nexth < max_num
+                        and 0 <= nextw < max_num
+                        and (nexth, nextw) not in blocks
+                        and (nexth, nextw) not in visited
+                    ):
+                        visited.add((nexth, nextw))
+                        pos.append((nexth, nextw))
+                cnt += 1
+                if len(pos) == 0:
+                    return False
+            return True
+
+        return bfs(source[0], source[1], target[0], target[1]) and bfs(
+            target[0], target[1], source[0], source[1]
+        )
 
 
 S = Solution()
-a = 1
-b = 20
-c = 5
-print(S.numMovesStones(a, b, c))
+blocked = []
+source = [0, 0]
+target = [999999, 999999]
+print(S.isEscapePossible(blocked, source, target))
