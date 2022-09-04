@@ -23,22 +23,14 @@ MOD2 = 998244353
 
 INF = float("inf")
 
-N = int(input())
-TXA = [list(map(int, input().split())) for _ in range(N)]
-X = [0] * (TXA[-1][0] + 1)
-A = [0] * (TXA[-1][0] + 1)
-for t, x, a in TXA:
-    X[t] = x
-    A[t] = a
-
-dp = [[-INF] * (TXA[-1][0] + 1) for _ in range(5)]
+N, M = map(int, input().split())
+A = list(map(int, input().split()))
+dp = [[-INF] * (N + 1) for _ in range(N + 1)]
 dp[0][0] = 0
-for t in range(1, (TXA[-1][0] + 1)):
-    for i in range(5):
-        dp[i][t] = dp[i][t - 1]
-        if i != 0:
-            dp[i][t] = max(dp[i][t], dp[i - 1][t - 1])
-        if i != 4:
-            dp[i][t] = max(dp[i][t], dp[i + 1][t - 1])
-    dp[X[t]][t] += A[t]
-print(max(dp[i][-1] for i in range(5)))
+for i in range(1, N + 1):
+    for j in range(N + 1):
+        if j == 0:
+            dp[i][0] = 0
+        elif j <= i:
+            dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - 1] + A[i - 1] * j)
+print(dp[N][M])
