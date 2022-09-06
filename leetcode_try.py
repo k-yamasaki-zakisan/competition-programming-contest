@@ -9,48 +9,41 @@ from collections import defaultdict, deque
 
 
 class Solution:
-    def isEscapePossible(
-        self, blocked: List[List[int]], source: List[int], target: List[int]
-    ) -> bool:
-        from collections import deque
-
-        blocks = set([(a, b) for a, b in blocked])
-        max_num = 10**6
-
-        def bfs(sh, sw, gh, gs):
-            pos = deque([[sh, sw]])
-            visited = set([(sh, sw)])
-            cnt = 0
-            while pos and cnt < 200:
-                nowh, noww = pos.popleft()
-                if nowh == gh and noww == gs:
-                    return True
-                for nexth, nextw in [
-                    [nowh + 1, noww],
-                    [nowh - 1, noww],
-                    [nowh, noww + 1],
-                    [nowh, noww - 1],
-                ]:
-                    if (
-                        0 <= nexth < max_num
-                        and 0 <= nextw < max_num
-                        and (nexth, nextw) not in blocks
-                        and (nexth, nextw) not in visited
-                    ):
-                        visited.add((nexth, nextw))
-                        pos.append((nexth, nextw))
-                cnt += 1
-                if len(pos) == 0:
-                    return False
-            return True
-
-        return bfs(source[0], source[1], target[0], target[1]) and bfs(
-            target[0], target[1], source[0], source[1]
-        )
+    def garbageCollection(self, garbage: List[str], travel: List[int]) -> int:
+        ans = sum([len(g) for g in garbage])
+        for i in range(1, len(travel)):
+            travel[i] += travel[i - 1]
+        travel = [0] + travel
+        g_posi = [i for i, g in enumerate(garbage) if "G" in g]
+        m_posi = [i for i, g in enumerate(garbage) if "M" in g]
+        p_posi = [i for i, g in enumerate(garbage) if "P" in g]
+        print(g_posi, m_posi, p_posi)
+        for i in range(len(g_posi)):
+            i_i = g_posi[i]
+            i_i_ex = g_posi[i - 1]
+            if i == 0 and i_i != 0:
+                ans += travel[i_i]
+            elif i_i != 0:
+                ans += travel[i_i] - travel[i_i_ex]
+            print(ans, travel, i_i)
+        for i in range(len(m_posi)):
+            i_i = m_posi[i]
+            i_i_ex = m_posi[i - 1]
+            if i == 0 and i_i != 0:
+                ans += travel[i_i]
+            elif i_i != 0:
+                ans += travel[i_i] - travel[i_i_ex]
+        for i in range(len(p_posi)):
+            i_i = p_posi[i]
+            i_i_ex = p_posi[i - 1]
+            if i == 0 and i_i != 0:
+                ans += travel[i_i]
+            elif i_i != 0:
+                ans += travel[i_i] - travel[i_i_ex]
+        return ans
 
 
 S = Solution()
-blocked = []
-source = [0, 0]
-target = [999999, 999999]
-print(S.isEscapePossible(blocked, source, target))
+garbage = ["MMM", "PGM", "GP"]
+travel = [3, 10]
+print(S.garbageCollection(garbage, travel))

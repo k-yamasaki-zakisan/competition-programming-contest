@@ -23,14 +23,33 @@ MOD2 = 998244353
 
 INF = float("inf")
 
+from heapq import heappop, heappush
+
 N, M = map(int, input().split())
 A = list(map(int, input().split()))
-dp = [[-INF] * (N + 1) for _ in range(N + 1)]
-dp[0][0] = 0
-for i in range(1, N + 1):
-    for j in range(N + 1):
-        if j == 0:
-            dp[i][0] = 0
-        elif j <= i:
-            dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - 1] + A[i - 1] * j)
-print(dp[N][M])
+UV = [list(map(int, input().split())) for _ in range(M)]
+root = [[] for _ in range(N)]
+memo = [0] * N
+for u, v in UV:
+    u, v = u - 1, v - 1
+    root[u].append(v)
+    root[v].append(u)
+    memo[u] += A[v]
+    memo[v] += A[u]
+q = []
+for i, m in enumerate(memo):
+    heappush(q, (m, i))
+visited = [False] * N
+ans = -1
+while q:
+    num, now = heappop(q)
+    if visited[now]:
+        continue
+    ans = max(ans, num)
+    visited[now] = True
+    for next in root[now]:
+        if visited[next]:
+            continue
+        memo[next] -= A[now]
+        heappush(q, (memo[next], next))
+print(ans)
