@@ -1,6 +1,6 @@
 # https://leetcode.com/problems/flower-planting-with-no-adjacent/
-# Runtime: 1195 ms, faster than 8.13% of Python3 online submissions for Flower Planting With No Adjacent.
-# Memory Usage: 21.1 MB, less than 81.22% of Python3 online submissions for Flower Planting With No Adjacent.
+# Runtime: 477 ms, faster than 87.79% of Python3 online submissions for Flower Planting With No Adjacent.
+# Memory Usage: 21.3 MB, less than 75.90% of Python3 online submissions for Flower Planting With No Adjacent.
 
 from typing import List
 
@@ -18,7 +18,7 @@ class Solution:
         for start in range(n):
             if ans[start] != -1:
                 continue
-            ans[start] = 0
+            ans[start] = 1
             stack = deque([start])
             while stack:
                 now = stack.popleft()
@@ -26,11 +26,11 @@ class Solution:
                     if ans[next] != -1:
                         continue
                     stack.append(next)
-                    cad = set([0, 1, 2, 3])
+                    cad = set([1, 2, 3, 4])
                     for n in root[next]:
                         if ans[n] in cad:
                             cad.remove(ans[n])
                     cad = list(cad)
                     cad.sort()
                     ans[next] = cad[0]
-        return [a + 1 for a in ans]
+        return ans
