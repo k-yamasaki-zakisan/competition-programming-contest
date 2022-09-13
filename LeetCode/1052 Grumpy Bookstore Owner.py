@@ -19,5 +19,4 @@ class Solution:
             if minutes <= i and grumpy[i - minutes]:
                 not_satisfied -= customers[i - minutes]
             bonus = max(bonus, not_satisfied)
-            # print(nomal, memo, max_time)
         return satisfied + bonus
