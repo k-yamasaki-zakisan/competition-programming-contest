@@ -9,19 +9,17 @@ from collections import defaultdict, deque
 
 
 class Solution:
-    def longestDupSubstring(self, s: str) -> str:
-        cnt = 0
-        ans = ""
-        for i in range(len(s)):
-            ss = s[i : i + cnt + 1]
-            moji = s[i + 1 :]
-            while ss in moji:
-                cnt += 1
-                ans = ss
-                ss = s[i : i + cnt + 1]
-        return ans
+    def maxEqualRowsAfterFlips(self, matrix: List[List[int]]) -> int:
+        from collections import defaultdict
+
+        cnt = defaultdict(int)
+        for ma in matrix:
+            cnt[tuple(ma)] += 1
+            re_ma = tuple([(m + 1) % 2 for m in ma])
+            cnt[re_ma] += 1
+        return max(cnt.values())
 
 
 S = Solution()
-s = "abcd"
-print(S.longestDupSubstring(s))
+matrix = [[0, 0, 0], [0, 0, 1], [1, 1, 0]]
+print(S.maxEqualRowsAfterFlips(matrix))
