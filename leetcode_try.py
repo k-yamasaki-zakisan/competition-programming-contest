@@ -10,14 +10,13 @@ from collections import defaultdict, deque
 
 class Solution:
     def maxEqualRowsAfterFlips(self, matrix: List[List[int]]) -> int:
-        from collections import defaultdict
-
-        cnt = defaultdict(int)
-        for ma in matrix:
-            cnt[tuple(ma)] += 1
-            re_ma = tuple([(m + 1) % 2 for m in ma])
-            cnt[re_ma] += 1
-        return max(cnt.values())
+        words = text.split(" ")
+        ans = [
+            words[i + 1]
+            for i in range(1, len(words) - 1)
+            if (words[i - 1] == first and words[i] == second)
+        ]
+        return ans
 
 
 S = Solution()
