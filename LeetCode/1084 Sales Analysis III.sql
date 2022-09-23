@@ -12,3 +12,9 @@ WHERE '2019-01-01' <= S.sale_date and S.sale_date <= '2019-03-31' and P.product_
     WHERE sale_date < '2019-01-01' or '2019-03-31' < sale_date
 )
 GROUP BY P.product_id;
+
+-- select distinct product.product_id,product.product_name
+-- from product
+-- join sales on product.product_id=sales.product_id
+-- group by product.product_id
+-- having max(sale_date) <='2019-03-31' and min(sale_date)>='2019-01-01';
