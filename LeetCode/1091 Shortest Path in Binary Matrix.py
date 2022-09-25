@@ -1,11 +1,8 @@
-from typing import List, Optional
-from collections import defaultdict, deque
+# https://leetcode.com/problems/shortest-path-in-binary-matrix/
+# Runtime: 1839 ms, faster than 11.78% of Python3 online submissions for Shortest Path in Binary Matrix.
+# Memory Usage: 14.3 MB, less than 64.83% of Python3 online submissions for Shortest Path in Binary Matrix.
 
-# from collections import Counter
-# from collections import defaultdict
-# from bisect import bisect_right
-# from copy import copy
-# from collections import deque
+from typing import List
 
 
 class Solution:
@@ -15,10 +12,11 @@ class Solution:
         max_y, max_x = len(grid), len(grid[0])
         stack = deque()
         dp = [[-1] * max_x for _ in range(max_y)]
-        if grid[0][0] == 0:
-            stack.append((0, 0))
-            dp[0][0] = 1
-        while len(stack):
+        if grid[0][0] == 1:
+            return -1
+        stack.append((0, 0))
+        dp[0][0] = 1
+        while stack:
             now_y, now_x = stack.popleft()
             for next_y, next_x in [
                 [now_y + 1, now_x],
@@ -39,8 +37,3 @@ class Solution:
                     dp[next_y][next_x] = dp[now_y][now_x] + 1
                     stack.append((next_y, next_x))
         return dp[-1][-1]
-
-
-S = Solution()
-grid = [[1, 0, 0], [1, 1, 0], [1, 1, 0]]
-print(S.shortestPathBinaryMatrix(grid))
