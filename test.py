@@ -1,2 +1,3 @@
-a = [1, 3, 3]
-print(*a)
+str1 = "abac"
+str2 = "cab"
+print(str2[2:])

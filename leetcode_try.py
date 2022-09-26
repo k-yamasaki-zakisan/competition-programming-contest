@@ -9,38 +9,55 @@ from collections import defaultdict, deque
 
 
 class Solution:
-    def shortestPathBinaryMatrix(self, grid: List[List[int]]) -> int:
-        from collections import deque
-
-        max_y, max_x = len(grid), len(grid[0])
-        stack = deque()
-        dp = [[-1] * max_x for _ in range(max_y)]
-        if grid[0][0] == 0:
-            stack.append((0, 0))
-            dp[0][0] = 1
-        while len(stack):
-            now_y, now_x = stack.popleft()
-            for next_y, next_x in [
-                [now_y + 1, now_x],
-                [now_y, now_x + 1],
-                [now_y + 1, now_x + 1],
-                [now_y + 1, now_x - 1],
-                [now_y - 1, now_x + 1],
-                [now_y - 1, now_x - 1],
-                [now_y - 1, now_x],
-                [now_y, now_x - 1],
-            ]:
-                if (
-                    0 <= next_y < max_y
-                    and 0 <= next_x < max_x
-                    and grid[next_y][next_x] == 0
-                    and dp[next_y][next_x] == -1
-                ):
-                    dp[next_y][next_x] = dp[now_y][now_x] + 1
-                    stack.append((next_y, next_x))
-        return dp[-1][-1]
+    def goodIndices(self, nums: List[int], k: int) -> List[int]:
+        len_nums = len(nums)
+        before = [False] * len_nums
+        after = [False] * len_nums
+        now_i = k
+        if k == 1:
+            return [i for i in range(1, len_nums - 1)]
+        while now_i < len_nums - k:
+            flag = True
+            for i in range(now_i - k + 1, now_i):
+                if nums[i - 1] < nums[i]:
+                    now_i = i + k
+                    flag = False
+                    break
+            if not flag:
+                continue
+            while now_i < len_nums - k:
+                if nums[now_i - 2] < nums[now_i - 1]:
+                    now_i = now_i - 1 + k
+                    break
+                else:
+                    before[now_i] = True
+                    now_i += 1
+        now_i = k
+        while now_i < len_nums - k:
+            flag = True
+            for i in range(now_i + 1, now_i + k):
+                if nums[i] > nums[i + 1]:
+                    now_i = i
+                    flag = False
+                    break
+            if not flag:
+                continue
+            while now_i < len_nums - k:
+                if nums[now_i + k - 1] > nums[now_i + k]:
+                    now_i += k - 1
+                    break
+                else:
+                    after[now_i] = True
+                    now_i += 1
+        ans = []
+        print(before, after)
+        for i in range(len_nums):
+            if after[i] and before[i]:
+                ans.append(i)
+        return ans
 
 
 S = Solution()
-grid = [[1, 0, 0], [1, 1, 0], [1, 1, 0]]
-print(S.shortestPathBinaryMatrix(grid))
+nums = [877464, 394689, 51354, 348332, 285490, 570624]
+k = 2
+print(S.goodIndices(nums, k))
