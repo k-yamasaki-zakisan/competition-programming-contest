@@ -9,20 +9,32 @@ from collections import defaultdict, deque
 
 
 class Solution:
-    def distributeCandies(self, candies: int, num_people: int) -> List[int]:
-        cnt = 1
-        ans = [0] * num_people
-        for i in range(candies):
-            i %= num_people
-            ans[i] += min(cnt, candies)
-            candies -= cnt
-            if candies <= 0:
+    def deleteString(self, S: str) -> int:
+        ans = 0
+        flag = True
+        while flag:
+            flag = False
+            for j in range(len(S) // 2 + 1):
+                for i in range(len(S) // 2):
+                    if (
+                        # i + j + 2 + j < len(S) and
+                        S[i : i + j + 1]
+                        == S[i + j + 1 : i + j + 2 + j]
+                    ):
+                        # print(S[i : i + j + 1], S[i + j + 1 : i + j + 2 + j])
+                        ans += 1
+                        print(S[:i], S[i + j + 1 :], i, j)
+                        S = S[:i] + S[i + j + 1 :]
+                        print(S)
+                        flag = True
+                        break
+                if flag:
+                    break
+            if not flag:
                 break
-            cnt += 1
-        return ans
+        return ans + 1
 
 
 S = Solution()
-candies = 10
-num_people = 3
-print(S.distributeCandies(candies, num_people))
+s = "aaabaab"
+print(S.deleteString(s))
