@@ -1,11 +1,6 @@
-from typing import List, Optional
-from collections import defaultdict, deque
-
-# from collections import Counter
-# from collections import defaultdict
-# from bisect import bisect_right
-# from copy import copy
-# from collections import deque
+# https://leetcode.com/problems/parsing-a-boolean-expression/
+# Runtime: 1358 ms, faster than 5.28% of Python3 online submissions for Parsing A Boolean Expression.
+# Memory Usage: 14.3 MB, less than 12.87% of Python3 online submissions for Parsing A Boolean Expression.
 
 
 class Solution:
@@ -44,8 +39,3 @@ class Solution:
                     elif expression[i] == "f":
                         tmp.append(False)
         return True if expression[0] == "t" else False
-
-
-S = Solution()
-expression = "!(&(f,t))"
-print(S.parseBoolExpr(expression))
