@@ -1,14 +1,8 @@
-from typing import List, Optional
+# https://leetcode.com/problems/longest-well-performing-interval/
+# Runtime: 577 ms, faster than 17.02% of Python3 online submissions for Longest Well-Performing Interval.
+# Memory Usage: 14.5 MB, less than 78.84% of Python3 online submissions for Longest Well-Performing Interval.
 
-from numpy import s_
-
-# from collections import Counter
-# from collections import defaultdict
-# from bisect import bisect_right
-# from copy import copy
-# from collections import deque
-
-# MOD = 10**9 + 7
+from typing import List
 
 
 class Solution:
@@ -25,8 +19,3 @@ class Solution:
                 if tmp - 1 in memo:
                     ans = max(ans, i - memo[tmp - 1])
         return ans
-
-
-S = Solution()
-hours = [6, 6, 8]
-print(S.longestWPI(hours))
