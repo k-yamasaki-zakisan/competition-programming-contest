@@ -1,14 +1,8 @@
-from typing import List, Optional
+# https://leetcode.com/problems/smallest-sufficient-team/
+# Runtime: 215 ms, faster than 86.57% of Python3 online submissions for Smallest Sufficient Team.
+# Memory Usage: 20.6 MB, less than 70.15% of Python3 online submissions for Smallest Sufficient Team.
 
-from numpy import s_
-
-# from collections import Counter
-# from collections import defaultdict
-# from bisect import bisect_right
-# from copy import copy
-# from collections import deque
-
-# MOD = 10**9 + 7
+from typing import List
 
 
 class Solution:
@@ -31,20 +25,3 @@ class Solution:
                     dp[new_task] = dp[task_i] + [index]
 
         return dp[(1 << len(req_skills)) - 1]
-
-
-S = Solution()
-req_skills = ["gvp", "jgpzzicdvgxlfix", "kqcrfwerywbwi", "jzukdzrfgvdbrunw", "k"]
-people = [
-    [],
-    [],
-    [],
-    [],
-    ["jgpzzicdvgxlfix"],
-    ["jgpzzicdvgxlfix", "k"],
-    ["jgpzzicdvgxlfix", "kqcrfwerywbwi"],
-    ["gvp"],
-    ["jzukdzrfgvdbrunw"],
-    ["gvp", "kqcrfwerywbwi"],
-]
-print(S.smallestSufficientTeam(req_skills, people))
