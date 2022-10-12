@@ -1,12 +1,8 @@
-from typing import List, Optional
+# https://leetcode.com/problems/number-of-equivalent-domino-pairs/
+# Runtime: 527 ms, faster than 37.71% of Python3 online submissions for Number of Equivalent Domino Pairs.
+# Memory Usage: 23.8 MB, less than 67.96% of Python3 online submissions for Number of Equivalent Domino Pairs.
 
-# from collections import Counter
-# from collections import defaultdict
-# from bisect import bisect_right
-# from copy import copy
-# from collections import deque
-
-# MOD = 10**9 + 7
+from typing import List
 
 
 class Solution:
@@ -21,8 +17,3 @@ class Solution:
             ans += memo[(a, b)]
             memo[(a, b)] += 1
         return ans
-
-
-S = Solution()
-dominoes = [[1, 2], [1, 2], [1, 1], [1, 2], [2, 2]]
-print(S.numEquivDominoPairs(dominoes))
