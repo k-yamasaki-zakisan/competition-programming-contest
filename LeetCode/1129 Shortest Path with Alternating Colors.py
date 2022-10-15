@@ -1,12 +1,8 @@
-from typing import List, Optional
+# https://leetcode.com/problems/shortest-path-with-alternating-colors/
+# Runtime: 89 ms, faster than 96.05% of Python3 online submissions for Shortest Path with Alternating Colors.
+# Memory Usage: 14 MB, less than 97.19% of Python3 online submissions for Shortest Path with Alternating Colors.
 
-# from collections import Counter
-# from collections import defaultdict
-# from bisect import bisect_right
-# from copy import copy
-# from collections import deque
-
-# MOD = 10**9 + 7
+from typing import List
 
 
 class Solution:
@@ -24,8 +20,7 @@ class Solution:
         for s, g in blueEdges:
             blue_roots[s].append(g)
         stack = deque([[0, -1, 0]])
-        visit_red = [False] * N
-        visit_blud = [False] * N
+        visit_red, visit_blud = [False] * N, [False] * N
         visit_red[0] = visit_blud[0] = True
         while stack:
             now_p, color, cnt = stack.popleft()
@@ -44,10 +39,3 @@ class Solution:
                         if ans[next_p] == -1:
                             ans[next_p] = cnt + 1
         return ans
-
-
-S = Solution()
-n = 3
-redEdges = [[0, 1]]
-blueEdges = [[2, 1]]
-print(S.shortestAlternatingPaths(n, redEdges, blueEdges))
