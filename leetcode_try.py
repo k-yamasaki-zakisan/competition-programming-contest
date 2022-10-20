@@ -10,14 +10,15 @@ from typing import List, Optional
 
 
 class Solution:
-    def sumOfNumberAndReverse(self, num: int) -> bool:
-        for t_num in range(num + 1):
-            rev_t_num = int(str(t_num)[::-1])
-            if t_num + rev_t_num == num:
-                return True
-        return False
+    def tribonacci(self, n: int) -> int:
+        if n < 3:
+            return 0 if n == 0 else 1
+        i_0, i_1, i_2 = 0, 1, 1
+        for _ in range(n - 2):
+            i_0, i_1, i_2 = i_1, i_2, i_0 + i_1 + i_2
+        return i_2
 
 
 S = Solution()
-n = 0
-print(S.sumOfNumberAndReverse(n))
+n = 25
+print(S.tribonacci(n))
