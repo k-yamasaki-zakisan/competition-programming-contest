@@ -1,12 +1,6 @@
-from typing import List, Optional
-
-# from collections import Counter
-# from collections import defaultdict
-# from bisect import bisect_right
-# from copy import copy
-# from collections import deque
-
-# MOD = 10**9 + 7
+# https://leetcode.com/problems/alphabet-board-path/
+# Runtime: 179 ms, faster than 5.19% of Python3 online submissions for Alphabet Board Path.
+# Memory Usage: 13.9 MB, less than 36.31% of Python3 online submissions for Alphabet Board Path.
 
 
 class Solution:
@@ -86,8 +80,3 @@ class Solution:
             ans += memo[alph_num[now]][alph_num[t]]
             now = t
         return ans + "!"
-
-
-S = Solution()
-target = "code"
-print(S.alphabetBoardPath(target))
