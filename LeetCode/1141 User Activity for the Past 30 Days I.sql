@@ -1,5 +1,5 @@
 -- https://leetcode.com/problems/user-activity-for-the-past-30-days-i/
--- Runtime: 1223 ms, faster than 5.01% of MySQL online submissions for User Activity for the Past 30 Days I.
+-- Runtime: 583 ms, faster than 64.42% of MySQL online submissions for User Activity for the Past 30 Days I.
 -- Memory Usage: 0B, less than 100.00% of MySQL online submissions for User Activity for the Past 30 Days I.
 
 -- Write your MySQL query statement below
