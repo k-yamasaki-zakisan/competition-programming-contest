@@ -27,6 +27,11 @@
     "editor.formatOnPaste": false,
     "editor.tabSize": 4
   },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.formatOnPaste": false,
+    "editor.tabSize": 4
+  },
 
   "window.zoomLevel": 2
 }
