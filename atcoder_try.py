@@ -7,7 +7,7 @@
 # from copy import copy
 # from itertools import combinations
 # from bisect import bisect
-# import heapq
+# from heapq import heapify, heappop, heappush
 # import sys
 # from collections import defaultdict
 # memo = defaultdict(int)

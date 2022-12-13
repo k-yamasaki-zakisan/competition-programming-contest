@@ -33,5 +33,6 @@
     "editor.tabSize": 4
   },
 
-  "window.zoomLevel": 2
+  "window.zoomLevel": 2,
+  "python.analysis.typeCheckingMode": "basic"
 }
