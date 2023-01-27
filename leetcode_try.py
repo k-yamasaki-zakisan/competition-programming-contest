@@ -9,25 +9,29 @@ from typing import List, Optional
 # MOD = 10**9 + 7
 
 
+from collections import deque
+
+
 class Solution:
-    def longestSquareStreak(self, nums: List[int]) -> int:
-        nums.sort()
-        max_num = nums[-1]
-        set_nums = set(nums)
-        ans = -1
-        for num in nums:
-            cnt = 0
-            while num <= max_num:
-                if num in set_nums:
-                    cnt += 1
-                else:
-                    break
-                num *= num
-            if 2 <= cnt:
-                ans = max(ans, cnt)
-        return ans
+    def minCost(self, nums: List[int], k: int):
+        from collections import defaultdict
+        import copy
+
+        len_nums = len(nums)
+        dp = [[defaultdict(int) for _ in range(len_nums)] for _ in range(len_nums)]
+        for i, num in enumerate(nums):
+            for j in range(i + 1):
+                if j < i:
+                    dp[i][j] = copy.deepcopy(dp[i - 1][j])
+                if j == i:
+                    dp[i][j][num] += 1
+                dp[j][j][num] += 1
+        for d in dp:
+            print(d)
 
 
 S = Solution()
-nums = [10, 2, 13, 16, 8, 9, 13]
-print(S.longestSquareStreak(nums))
+
+nums = [1, 2, 1, 2, 1]
+k = 2
+print(S.minCost(nums, k))
