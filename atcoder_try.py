@@ -22,5 +22,3 @@ sys.setrecursionlimit(10**7)
 INF = float("inf")
 MOD1 = 10**9 + 7
 MOD2 = 998244353
-
-INF = float("inf")
