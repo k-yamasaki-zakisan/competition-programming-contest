@@ -290,3 +290,7 @@
 ## ３角形内に任意の点が入っているか
 
 https://atcoder.jp/contests/abc266/submissions/34408664
+
+## ローリングハッシュ
+
+https://atcoder.jp/contests/tessoku-book/submissions/40333361
