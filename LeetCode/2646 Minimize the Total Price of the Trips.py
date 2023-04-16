@@ -1,22 +1,12 @@
-from typing import List, Optional
+from typing import List
 from functools import lru_cache
-
-# from collections import Counter
-
-# from collections import defaultdict
-# from bisect import bisect_right
-# from copy import copy
-# from collections import deque
-
-# MOD = 10**9 + 7
+from collections import deque
 
 
 class Solution:
     def minimumTotalPrice(
         self, n: int, edges: List[List[int]], price: List[int], trips: List[List[int]]
     ) -> int:
-        from collections import deque
-
         INF = float("inf")
 
         root = [[] for _ in range(n)]
@@ -45,24 +35,14 @@ class Solution:
 
         @lru_cache(None)
         def dfs(vertex: int, parent: int, parent_halved: bool):
-            # If parent already halved, then this vertex can't be halved, so give it a inf
             halved = INF if parent_halved else (price[vertex] * repeats[vertex]) // 2
             not_halved = price[vertex] * repeats[vertex]
             for next in root[vertex]:
                 if next == parent:
                     continue
-                if halved < INF:
+                if halved != INF:
                     halved += dfs(next, vertex, True)
                 not_halved += dfs(next, vertex, False)
             return min(halved, not_halved)
 
         return dfs(0, -1, False)
-
-
-S = Solution()
-
-n = 4
-edges = [[0, 1], [1, 2], [1, 3]]
-price = [2, 2, 10, 6]
-trips = [[0, 3], [2, 1], [2, 3]]
-print(S.minimumTotalPrice(n, edges, price, trips))
