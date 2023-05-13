@@ -12,57 +12,68 @@ from functools import lru_cache
 
 
 class Solution:
-    def minimumTotalPrice(
-        self, n: int, edges: List[List[int]], price: List[int], trips: List[List[int]]
+    def minimumCost(
+        self, start: List[int], target: List[int], specialRoads: List[List[int]]
     ) -> int:
-        from collections import deque
+        points = {}
+        points[tuple(start)] = 0
+        points[tuple(target)] = 1
+        p = 2
+        for x1, y1, x2, y2, cost in specialRoads:
+            if (x1, y1) not in points:
+                points[(x1, y1)] = p
+                p += 1
+            if (x2, y2) not in points:
+                points[(x2, y2)] = p
+                p += 1
+        costs = [[] for _ in range(len(points))]
+        costs[points[tuple(start)]].append(
+            [
+                points[tuple(target)],
+                abs(start[0] - target[0]) + abs(start[1] - target[1]),
+            ]
+        )
+        for x1, y1, x2, y2, cost in specialRoads:
+            costs[points[tuple(start)]].append(
+                [points[(x1, y1)], abs(start[0] - x1) + abs(start[1] - y1)]
+            )
+            costs[points[(x1, y1)]].append([points[(x2, y2)], cost])
+            costs[points[tuple(target)]].append(
+                [points[(x2, y2)], abs(target[0] - x2) + abs(target[1] - y2)]
+            )
+        for i in range(len(specialRoads) - 1):
+            x11, y11, x21, y21, cost2 = specialRoads[i]
+            for j in range(i + 1, len(specialRoads)):
+                x12, y12, x22, y22, cost2 = specialRoads[j]
+                costs[points[(x21, y21)]].append(
+                    [points[(x12, y12)], abs(x21 - x12) + abs(y21 - y12)]
+                )
+        result = self.dij(costs, points[tuple(start)])
+        print(result)
+        return result[points[tuple(target)]]
 
-        INF = float("inf")
+    def dij(self, cost, start):
+        import heapq
 
-        root = [[] for _ in range(n)]
-        for s, g in edges:
-            root[s].append(g)
-            root[g].append(s)
-        repeats = [0] * n
-        for s, g in trips:
-            step_cnt = [-1] * n
-            step_cnt[s] = 0
-            stack = deque([s])
-            while len(stack):
-                now = stack.popleft()
-                for next in root[now]:
-                    if step_cnt[next] == -1:
-                        step_cnt[next] = step_cnt[now] + 1
-                        stack.append(next)
-            stack = deque([g])
-            repeats[g] += 1
-            while len(stack):
-                now = stack.popleft()
-                for next in root[now]:
-                    if step_cnt[next] == step_cnt[now] - 1:
-                        repeats[next] += 1
-                        stack.append(next)
+        d = [float("inf")] * len(cost)  # 最短距離
+        d[start] = 0
 
-        @lru_cache(None)
-        def dfs(vertex: int, parent: int, parent_halved: bool):
-            # If parent already halved, then this vertex can't be halved, so give it a inf
-            halved = INF if parent_halved else (price[vertex] * repeats[vertex]) // 2
-            not_halved = price[vertex] * repeats[vertex]
-            for next in root[vertex]:
-                if next == parent:
-                    continue
-                if halved < INF:
-                    halved += dfs(next, vertex, True)
-                not_halved += dfs(next, vertex, False)
-            return min(halved, not_halved)
-
-        return dfs(0, -1, False)
+        q = [(d[start], start)]  # min-heap, (距離, 頂点)
+        heapq.heapify(q)
+        while q:
+            du, u = heapq.heappop(q)  # 最短距離とその頂点
+            if d[u] < du:
+                continue
+            for v, weight in cost[u]:
+                if du + weight < d[v]:
+                    d[v] = du + weight
+                    heapq.heappush(q, (d[v], v))
+        return d
 
 
 S = Solution()
 
-n = 4
-edges = [[0, 1], [1, 2], [1, 3]]
-price = [2, 2, 10, 6]
-trips = [[0, 3], [2, 1], [2, 3]]
-print(S.minimumTotalPrice(n, edges, price, trips))
+start = [1, 1]
+target = [5, 10]
+specialRoads = [[3, 4, 5, 2, 5], [4, 5, 3, 8, 3], [3, 2, 5, 3, 1]]
+print(S.minimumCost(start, target, specialRoads))

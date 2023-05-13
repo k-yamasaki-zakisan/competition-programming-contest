@@ -14,7 +14,7 @@
 
   // Python用のformatter
   // https://itc-engineering-blog.netlify.app/blogs/black-flake8
-  "python.formatting.provider": "black",
+  "python.formatting.provider": "none",
   "python.linting.flake8Enabled": true,
   "python.linting.flake8Args": [
     "--max-line-length=88",
@@ -23,7 +23,7 @@
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "[python]": {
-    "editor.defaultFormatter": null,
+    "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnPaste": false,
     "editor.tabSize": 4
   },
