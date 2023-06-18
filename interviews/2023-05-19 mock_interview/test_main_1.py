@@ -4,8 +4,7 @@ import main_1
 
 class TestMain(unittest.TestCase):
     def test_count_by_date(self):
-        """test method for count_by_date
-        """
+        """test method for count_by_date"""
         space_id = 0
         day = 3
         ks = [
