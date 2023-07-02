@@ -12,33 +12,46 @@ from functools import lru_cache
 
 
 class Solution:
-    def specialPerm(self, nums: List[int]) -> int:
-        MOD = 10**9 + 7
-        n = len(nums)
-        nums.sort()
-        edges = [[0] * n for _ in range(n)]
-        dp = [[0] * n for _ in range(1 << n)]
-
-        for i in range(n):
-            for j in range(i + 1, n):
-                if nums[j] % nums[i] == 0:
-                    edges[i][j] = 1
-
-        for i in range(n):
-            dp[1 << i][i] = 1
-
-        for mask in range(1, 1 << n):
-            for i in range(n):
-                if mask & (1 << i):
-                    for j in range(n):
-                        if (mask & (1 << j) == 0) and edges[i][j]:
-                            dp[mask | (1 << j)][j] += dp[mask][i]
-                            dp[mask | (1 << j)][j] %= MOD
-
-        return sum(dp[(1 << n) - 1]) % MOD
+    def survivedRobotsHealths(
+        self, positions: List[int], healths: List[int], directions: str
+    ) -> List[int]:
+        N = len(positions)
+        cand = []
+        for i in range(N):
+            cand.append([positions[i], healths[i], directions[i], i])
+            cand.sort()
+        ans = [cand[0]]
+        for i in range(1, N):
+            if len(ans) == 0:
+                ans.append(cand)
+            elif ans[-1][2] == "R" and cand[i][2] == "L":
+                if ans[-1][1] == cand[i][1]:
+                    ans.pop
+                elif ans[-1][1] > cand[i][1]:
+                    ans[-1][1] -= 1
+                else:
+                    while len(ans):
+                        if ans[-1][2] == "R" and cand[i][2] == "L":
+                            if ans[-1][1] == cand[i][1]:
+                                ans.pop
+                                break
+                            elif ans[-1][1] > cand[i][1]:
+                                ans[-1][1] -= 1
+                                break
+                            else:
+                                ans.pop()
+                                cand[i][1] -= 1
+                        else:
+                            ans.append(cand[i])
+            else:
+                ans.append(cand[i])
+        return ans
 
 
 S = Solution()
 
-nums = [2, 3, 6]
-print(S.specialPerm(nums))
+positions = [5, 4, 3, 2, 1]
+healths = [2, 17, 9, 15, 10]
+directions = "RRRRR"
+# 4
+print(S.survivedRobotsHealths(positions, healths, directions))
