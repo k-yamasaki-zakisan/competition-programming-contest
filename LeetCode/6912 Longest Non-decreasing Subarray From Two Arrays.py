@@ -5,7 +5,6 @@ class Solution:
     def maxNonDecreasingLength(self, nums1: List[int], nums2: List[int]) -> int:
         n = len(nums1)
         dp1, dp2 = [1] * n, [1] * n
-        dp1[0] = dp2[0] = 1
         for i in range(1, n):
             if nums1[i] >= nums1[i - 1]:
                 dp1[i] = dp1[i - 1] + 1
