@@ -1,3 +1,6 @@
+# Runtime 334ms Beats 99.67%of users with Python3
+# Memory 30.14mb Beats 85.66%of users with Python3
+
 from typing import List
 
 
