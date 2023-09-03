@@ -12,35 +12,33 @@ from functools import lru_cache
 
 
 class Solution:
-    def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
-        from collections import deque
+    def countInterestingSubarrays(self, nums: List[int], modulo: int, k: int) -> int:
         from collections import defaultdict
 
-        pre_memo = defaultdict(list)
-        require = defaultdict(int)
-        for a, b in prerequisites:
-            pre_memo[b].append(a)
-            require[a] += 1
-        initial_value = []
-        for i in range(numCourses):
-            if require[i] == 0:
-                initial_value.append(i)
-        stack = deque(initial_value.copy())
-        ans = initial_value.copy()
-        used = set(initial_value)
-        while len(stack):
-            now = stack.popleft()
-            for next in pre_memo[now]:
-                if next in used:
-                    continue
-                used.add(next)
-                ans.append(next)
-                stack.append(next)
+        len_nums = len(nums)
+        cnts = [0] * len_nums
+        for i in range(len_nums):
+            if nums[i] % modulo == k:
+                cnts[i] += 1
+        for i in range(1, len_nums):
+            cnts[i] += cnts[i - 1]
+        memo = defaultdict(int)
+        for cnt in cnts:
+            memo[cnt] += 1
+        print(cnts)
+
+        ans = 0
+        for key, val in memo.items():
+            if key % modulo == k:
+                ans += val
+            else:
+                ans += val - 1
         return ans
 
 
 S = Solution()
-numCourses = 3
-prerequisites = [[0, 1], [0, 2], [1, 2]]
-print(S.findOrder(numCourses, prerequisites))
-# [2,1,0]
+nums = [11, 12, 21, 31]
+modulo = 10
+k = 1
+print(S.countInterestingSubarrays(nums, modulo, k))
+# 5
