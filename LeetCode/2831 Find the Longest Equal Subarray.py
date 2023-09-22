@@ -20,5 +20,4 @@ class Solution:
                     head += 1
                 else:
                     tail += 1
-                # print(vals, tail, head)
         return ans
