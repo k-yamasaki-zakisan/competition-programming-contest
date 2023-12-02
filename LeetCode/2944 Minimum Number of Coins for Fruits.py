@@ -9,12 +9,7 @@ class Solution:
         dp[0] = prices[0]
         for i in range(1, n):
             for j in range(i):
-                if (j + 1) * 2 < i:
-                    continue
-                dp[i] = min(dp[i], dp[j] + prices[i])
-        ans = INF
-        for i in range(n):
-            if (i + 1) * 2 < n:
-                continue
-            ans = min(ans, dp[i])
-        return ans
+                if i <= (j + 1) * 2:
+                    dp[i] = min(dp[i], dp[j] + prices[i])
+
+        return min([dp[i] for i in range(n) if n <= (i + 1) * 2])
