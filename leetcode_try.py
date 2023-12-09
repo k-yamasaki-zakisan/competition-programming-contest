@@ -25,5 +25,5 @@ S = Solution()
 a = 0
 b = 3
 n = 1
-print(S.maximumXorProduct(a, b, n))
+print(S.numberOfMatches(a, b, n))
 # 10
