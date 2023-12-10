@@ -12,18 +12,33 @@ from functools import lru_cache
 
 
 class Solution:
-    def numberOfMatches(self, n: int) -> int:
+    def countSubarrays(self, nums: List[int], k: int) -> int:
+        from bisect import bisect_left
+
+        n = len(nums)
+        max_num = max(nums)
+        counts = [0] * n
+        for i in range(n):
+            if max_num == nums[i]:
+                counts[i] += 1
+        for i in range(1, n):
+            counts[i] += counts[i - 1]
         ans = 0
-        while 0 < n:
-            print(n)
-            ans += (n + 1) // 2
-            n = (n + 1) // 2
+        print(counts)
+        for i in range(n):
+            if nums[i] == max_num:
+                target_cnt = counts[i] + (k - 1)
+            else:
+                target_cnt = counts[i] + k
+            j = bisect_left(counts, target_cnt)
+            # print(i, j)
+            if j < n:
+                ans += n - j
         return ans
 
 
 S = Solution()
-a = 0
-b = 3
-n = 1
-print(S.numberOfMatches(a, b, n))
+nums = [1, 3, 2, 3, 3]
+k = 2
+print(S.countSubarrays(nums, k))
 # 10
