@@ -8,4 +8,5 @@ class Solution:
                     memo[h][w] = 1
                     continue
                 memo[h][w] = memo[h - 1][w] + memo[h][w - 1]
+
         return memo[-1][-1]
