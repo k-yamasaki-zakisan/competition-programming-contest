@@ -12,33 +12,31 @@ from functools import lru_cache
 
 
 class Solution:
-    def countSubarrays(self, nums: List[int], k: int) -> int:
+    def minOperationsToMakeMedianK(self, nums: List[int], k: int) -> int:
         from bisect import bisect_left
 
         n = len(nums)
-        max_num = max(nums)
-        counts = [0] * n
-        for i in range(n):
-            if max_num == nums[i]:
-                counts[i] += 1
-        for i in range(1, n):
-            counts[i] += counts[i - 1]
+        nums.sort()
+        print(nums)
+        if n == 1:
+            return abs(nums[0] - k)
+        if nums[n // 2] == k:
+            return 0
+        mid_i = bisect_left(nums, k)
+        print(mid_i)
         ans = 0
-        print(counts)
-        for i in range(n):
-            if nums[i] == max_num:
-                target_cnt = counts[i] + (k - 1)
-            else:
-                target_cnt = counts[i] + k
-            j = bisect_left(counts, target_cnt)
-            # print(i, j)
-            if j < n:
-                ans += n - j
+        if mid_i <= n // 2:
+            for i in range(mid_i, n // 2 + 1):
+                ans += nums[i] - k
+        else:
+            for i in range(n // 2, mid_i):
+                ans += k - nums[i]
+
         return ans
 
 
 S = Solution()
-nums = [1, 3, 2, 3, 3]
-k = 2
-print(S.countSubarrays(nums, k))
+nums = [98, 52]
+k = 82
+print(S.minOperationsToMakeMedianK(nums, k))
 # 10
