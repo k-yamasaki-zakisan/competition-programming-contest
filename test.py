@@ -1,3 +1,5 @@
-print(ord("z"))
-a = [1, 2, 3, 4, 5]
-print(1 & 1)
+from collections import defaultdict
+
+root_memo = defaultdict(lambda: defaultdict(int))
+root_memo[1][2] = 1
+print(root_memo[1][2])
