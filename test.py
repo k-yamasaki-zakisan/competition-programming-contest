@@ -1,2 +1,1 @@
-a = "asdfhj"
-print(a[0:4])
+print(bin(13))
