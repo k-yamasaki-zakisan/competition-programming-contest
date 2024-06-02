@@ -12,31 +12,23 @@ from functools import lru_cache
 
 
 class Solution:
-    def minOperationsToMakeMedianK(self, nums: List[int], k: int) -> int:
-        from bisect import bisect_left
-
-        n = len(nums)
-        nums.sort()
-        print(nums)
-        if n == 1:
-            return abs(nums[0] - k)
-        if nums[n // 2] == k:
-            return 0
-        mid_i = bisect_left(nums, k)
-        print(mid_i)
+    def countDays(self, days: int, meetings: List[List[int]]) -> int:
         ans = 0
-        if mid_i <= n // 2:
-            for i in range(mid_i, n // 2 + 1):
-                ans += nums[i] - k
-        else:
-            for i in range(n // 2, mid_i):
-                ans += k - nums[i]
-
+        now = 1
+        meetings.sort()
+        print(meetings)
+        for s, g in meetings:
+            if now < s:
+                ans += s - now - 1
+            now = max(now, g)
+            print(ans, now)
+        if now < days:
+            ans += days - now - 1
         return ans
 
 
 S = Solution()
-nums = [98, 52]
-k = 82
-print(S.minOperationsToMakeMedianK(nums, k))
+days = 10
+meetings = [[5, 7], [1, 3], [9, 10]]
+print(S.countDays(days, meetings))
 # 10
