@@ -12,23 +12,30 @@ from functools import lru_cache
 
 
 class Solution:
-    def countDays(self, days: int, meetings: List[List[int]]) -> int:
-        ans = 0
+    def findTheWinner(self, n: int, k: int) -> int:
+        leave_friends = set()
         now = 1
-        meetings.sort()
-        print(meetings)
-        for s, g in meetings:
-            if now < s:
-                ans += s - now - 1
-            now = max(now, g)
-            print(ans, now)
-        if now < days:
-            ans += days - now - 1
-        return ans
+        for _ in range(n - 1):
+            cnt = 0
+            while cnt != k:
+                if now not in leave_friends:
+                    cnt += 1
+                now += 1
+                if n < now:
+                    now -= n
+            leave_friends.add(now)
+            while now in leave_friends:
+                now += 1
+                if n < now:
+                    now -= n
+        now += 1
+        if n < now:
+            now -= n
+        return now
 
 
 S = Solution()
-days = 10
-meetings = [[5, 7], [1, 3], [9, 10]]
-print(S.countDays(days, meetings))
+n = 5
+k = 2
+print(S.findTheWinner(n, k))
 # 10
