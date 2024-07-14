@@ -1,6 +1,7 @@
-s = "*ss"
-# print(s.replace("*", ""))
-print(s[:1])
-print(10 & 7)
-print(2**31)
-print(2**18)
+a = 1
+for i in range(1, 11):
+    a *= i
+b = 1
+for j in range(11, 20):
+    b *= j
+print(b)
