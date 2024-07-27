@@ -251,3 +251,4 @@ for _ in range(n):
 ab = sorted(ab, key=lambda x: x[1])
 print(ab)
 [[2, 4], [1, 8], [1, 9], [4, 9], [3, 12]]
+161700
