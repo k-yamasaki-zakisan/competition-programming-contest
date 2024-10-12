@@ -1,3 +1,4 @@
+// 2次元累積和
 fun main() {
     val (H, W, N) = readLine()!!.split(" ").map(String::toInt)
     val ABCD = mutableListOf<List<Int>>()
