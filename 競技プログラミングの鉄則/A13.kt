@@ -1,3 +1,4 @@
+// ２分探索
 fun main() {
     val (N, K) = readLine()!!.split(" ").map(String::toInt)
     val A = readLine()!!.split(" ").map(String::toInt)
