@@ -1,3 +1,4 @@
+// nCiの高速化
 fun main() {
     val N = readLine()!!.trim().toInt()
     val A = readLine()!!.split(" ").map { it.toInt() }
