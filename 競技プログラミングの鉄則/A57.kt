@@ -1,30 +1,25 @@
-const val MOD = 1_000_000_007L
-const val BASE = 31L
-
 fun main() {
     val (N, Q) = readLine()!!.split(" ").map { it.toInt() }
-    val S = readLine()!!.trim()
-    val ABCDs = List(Q) {
-        readLine()!!.split(" ").map { it.toInt() }
+    val A = readLine()!!.split(" ").map { it.toInt() }
+    val XYs = List(Q) {
+        readLine()!!.split(" ").map { it.toLong() }
     }
-    val hash = LongArray(N + 1)
-    val power = LongArray(N + 1)
-
-    power[0] = 1
-    for (i in 1..N) {
-        power[i] = (power[i - 1] * BASE) % MOD
-        hash[i] = (hash[i - 1] * BASE + (S[i - 1] - 'a' + 1)) % MOD
+    val dp = ArrayList(List(30) { ArrayList(List(N) { 0 }) })
+    for (i in 0 until N) {
+        dp[0][i] = A[i]-1
     }
-
-    fun getHash(l: Int, r: Int): Long {
-        return (hash[r] - hash[l - 1] * power[r - l + 1] % MOD + MOD) % MOD
-    }
-
-    for ((a,b,c,d) in ABCDs) {
-        if (getHash(a, b) == getHash(c, d)) {
-            println("Yes")
-        } else {
-            println("No")
+    for (i in 1 until 30) {
+        for (j in 0 until N) {
+            dp[i][j] = dp[i - 1][dp[i - 1][j]]
         }
+    }
+    for ((x, y) in XYs) {
+        var pos = (x - 1).toInt()
+        for (i in 29 downTo 0) {
+            if (y and (1L shl i) != 0L) {
+                pos = dp[i][pos]
+            }
+        }
+        println(pos + 1)
     }
 }
