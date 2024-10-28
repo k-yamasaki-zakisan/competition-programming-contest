@@ -1,3 +1,4 @@
+// セグメントツリー（区間の最大値）
 class SegmentTree(private val size: Int) {
     private val tree = LongArray(2 * size) { 0L }
 
