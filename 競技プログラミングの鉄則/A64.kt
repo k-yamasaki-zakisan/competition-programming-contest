@@ -1,3 +1,4 @@
+// ダイクストラ法
 import java.util.PriorityQueue
 
 fun main() {
