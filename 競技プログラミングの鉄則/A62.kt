@@ -9,10 +9,10 @@ fun main() {
         root.computeIfAbsent(b-1) { mutableListOf() }.add(a-1)
     }
 
-    val visited = Array(N) { false }
+    val visited = Array(N) { -1 }
     val stock = mutableListOf<Int>()
     stock.add(0)
-    visited[0] = true
+    visited[0] = 0
     while (!stock.isEmpty()) {
         val now = stock.removeLast()
 
