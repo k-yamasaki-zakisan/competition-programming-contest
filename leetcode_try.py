@@ -12,26 +12,20 @@ from functools import lru_cache
 
 
 class Solution:
-    def findTheWinner(self, n: int, k: int) -> int:
-        leave_friends = set()
-        now = 1
-        for _ in range(n - 1):
-            cnt = 0
-            while cnt != k:
-                if now not in leave_friends:
-                    cnt += 1
-                now += 1
-                if n < now:
-                    now -= n
-            leave_friends.add(now)
-            while now in leave_friends:
-                now += 1
-                if n < now:
-                    now -= n
-        now += 1
-        if n < now:
-            now -= n
-        return now
+    def minimumSize(self, nums: List[int], maxOperations: int) -> int:
+        l, r = 0, max(nums)
+        while 1 < r - l:
+            mid = (l + r) // 2
+            tmp = 0
+            for num in nums:
+                while mid < num:
+                    num //= 2
+                    tmp += 1
+            if tmp <= maxOperations:
+                r = mid
+            else:
+                l = mid
+        return r
 
 
 S = Solution()
