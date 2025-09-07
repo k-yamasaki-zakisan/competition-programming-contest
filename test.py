@@ -1,1 +1,2 @@
-print([1, 2, 3, 4][:2])
+for s_h in range(0, 9, 3):
+    print(s_h)
