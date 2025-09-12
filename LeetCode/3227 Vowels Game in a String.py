@@ -4,7 +4,5 @@ class Solution:
         cnt = 0
         for i in s:
             if i in vowels:
-                cnt += 1
-        if cnt == 0:
-            return False
-        return True
+                return True
+        return False
